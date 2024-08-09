@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    env_file:
+      - .env
+    ports:
+      - "8000:8000"
+    depends_on:
+      - postgresdb
+    environment:
+      - DATABASE_POSTGRES_URL=${POSTGRES_URL}
+
+  postgresdb:
+    image: postgres
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=${POSTGRES_DB}
+    volumes:
+      - postgresdb-data:/var/lib/postgresdb/data
+
+volumes:
+  postgresdb-data:
