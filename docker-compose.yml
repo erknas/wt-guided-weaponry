@@ -3,23 +3,47 @@ version: '3.8'
 services:
   app:
     build: .
+    volumes:
+      - .:/usr/src/app
     env_file:
       - .env
     ports:
       - "8000:8000"
     depends_on:
       - postgresdb
+      - mongodb
     environment:
       - DATABASE_POSTGRES_URL=${POSTGRES_URL}
+      - MONGO_URL=${MONGO_URL}
+    networks:
+      - appnet
 
   postgresdb:
-    image: postgres
+    image: postgres:latest
     environment:
       - POSTGRES_USER=${POSTGRES_USER}
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
       - POSTGRES_DB=${POSTGRES_DB}
     volumes:
       - postgresdb-data:/var/lib/postgresdb/data
+    networks:
+      - appnet
+  
+  mongodb:
+    image: mongo:latest
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=${MONGO_ROOT_USERNAME}
+      - MONGO_INITDB_ROOT_PASSWORD=${MONGO_ROOT_PASSWORD}
+      - MONGO_INITDB_ROOT_DATABASE=${MONGODB_DATABASE}
+    volumes:
+      - mongodb-data:/var/lib/mongodb/data
+    networks:
+      - appnet
 
 volumes:
   postgresdb-data:
+  mongodb-data:
+
+networks:
+  appnet:
+    driver: bridge

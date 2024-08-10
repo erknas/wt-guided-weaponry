@@ -1,4 +1,4 @@
-FROM golang:1.22-alpine
+FROM golang:1.22-alpine AS builder
 
 WORKDIR /app
 
@@ -8,6 +8,13 @@ RUN go mod download
 COPY . .
 
 RUN go build -o main cmd/wt-guided-weaponry/main.go 
+
+FROM alpine:latest
+
+WORKDIR /app
+
+COPY --from=builder /app/main .
+COPY .env /app/.env
 
 EXPOSE 8000
 
