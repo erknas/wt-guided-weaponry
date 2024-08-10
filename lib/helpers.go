@@ -5,16 +5,16 @@ import (
 	"net/http"
 )
 
-type ApiErr struct {
+type APIErr struct {
 	Error string `json:"error"`
 }
 
-type ApiFunc func(w http.ResponseWriter, r *http.Request) error
+type APIFunc func(w http.ResponseWriter, r *http.Request) error
 
-func MakeHTTP(fn ApiFunc) http.HandlerFunc {
+func MakeHTTP(fn APIFunc) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		if err := fn(w, r); err != nil {
-			WriteJSON(w, http.StatusBadRequest, ApiErr{Error: err.Error()})
+			WriteJSON(w, http.StatusBadRequest, APIErr{Error: err.Error()})
 		}
 	}
 }

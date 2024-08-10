@@ -11,7 +11,7 @@ func SetupLogger() *log.Logger {
 	logger.Formatter = &log.JSONFormatter{}
 
 	logger.SetOutput(os.Stdout)
-	logger.SetLevel(log.InfoLevel)
+	logger.SetLevel(log.DebugLevel)
 
 	return logger
 }

@@ -2,15 +2,14 @@ package postgresdb
 
 import (
 	"context"
-	"database/sql"
-	"errors"
 	"fmt"
 
 	"github.com/jackc/pgx/v5"
+
 	"github.com/zeze322/wt-guided-weaponry/models"
 )
 
-type Storage interface {
+type Store interface {
 	Categories(context.Context) ([]models.Category, error)
 }
 
@@ -60,10 +59,6 @@ func (p *PostgresConn) Categories(ctx context.Context) ([]models.Category, error
 
 	if err := rows.Err(); err != nil {
 		return nil, err
-	}
-
-	if errors.Is(err, sql.ErrNoRows) {
-		return nil, fmt.Errorf("failed to get categories")
 	}
 
 	return categories, nil
