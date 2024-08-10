@@ -171,6 +171,20 @@ func (s *Server) handleDeleteWeapon(w http.ResponseWriter, r *http.Request) erro
 	return lib.WriteJSON(w, http.StatusOK, struct{}{})
 }
 
-// TODO handleSearchWeapon
+func (s *Server) handleSearchWeapon(w http.ResponseWriter, r *http.Request) error {
+	search := chi.URLParam(r, "search")
 
-// TODO handleCompareWeapons
+	weapons, err := s.mongo.SearchWeapon(r.Context(), search)
+	if err != nil {
+		s.logger.WithFields(log.Fields{
+			"request_id": fmt.Sprintf("%d", os.Getpid()),
+			"path":       r.URL.Path,
+			"error":      err,
+		}).Debug("handleSearchWeapon error")
+		return err
+	}
+
+	s.logger.Infof("found %d weapons", len(weapons))
+
+	return lib.WriteJSON(w, http.StatusOK, WeaponsResponse{Weapons: weapons})
+}

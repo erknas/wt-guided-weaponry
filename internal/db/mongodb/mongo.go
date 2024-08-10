@@ -19,6 +19,7 @@ type Store interface {
 	InsertWeapon(context.Context, *models.Params) error
 	UpdateWeapon(context.Context, string, *models.Params) error
 	DeleteWeapon(context.Context, string) error
+	SearchWeapon(context.Context, string) ([]*models.Params, error)
 }
 
 type MongoClient struct {
@@ -181,4 +182,33 @@ func (m *MongoClient) DeleteWeapon(ctx context.Context, name string) error {
 	}
 
 	return nil
+}
+
+func (m *MongoClient) SearchWeapon(ctx context.Context, keyWord string) ([]*models.Params, error) {
+	coll := m.client.Database(m.mongoDatabase).Collection(m.mongoCollection)
+
+	filter := bson.D{{"$text", bson.D{{"$search", keyWord}}}}
+
+	cursor, err := coll.Find(ctx, filter)
+	if err != nil {
+		return nil, err
+	}
+
+	defer cursor.Close(ctx)
+
+	var weapons []*models.Params
+
+	if err := cursor.All(ctx, &weapons); err != nil {
+		return nil, err
+	}
+
+	if err := cursor.Err(); err != nil {
+		return nil, err
+	}
+
+	if len(weapons) == 0 {
+		return nil, fmt.Errorf("nothing found: %s", keyWord)
+	}
+
+	return weapons, nil
 }

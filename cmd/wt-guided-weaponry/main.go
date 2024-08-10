@@ -42,6 +42,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	if err := mongoClient.CreateIndex(ctx); err != nil {
+		log.Println(err)
+	}
+
 	defer mongoClient.Close(ctx)
 
 	logger := logger.SetupLogger()

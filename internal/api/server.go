@@ -36,6 +36,7 @@ func (s *Server) Run() error {
 	router.HandleFunc("/weapons", lib.MakeHTTP(s.handleWeapons))
 	router.HandleFunc("/weapon", lib.MakeHTTP(s.handleInsertWeapon))
 	router.HandleFunc("/weapon/{name}", lib.MakeHTTP(s.handleWeapon))
+	router.HandleFunc("/search/{search}", lib.MakeHTTP(s.handleSearchWeapon))
 
 	log.Printf("Starting server on http://localhost:8000")
 
