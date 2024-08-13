@@ -13,6 +13,7 @@ import (
 )
 
 type Store interface {
+	Categories(context.Context) ([]models.Category, error)
 	Weapons(context.Context) ([]*models.Params, error)
 	WeaponByName(context.Context, string) (*models.Params, error)
 	WeaponsByCategory(context.Context, string) ([]*models.Params, error)
@@ -51,10 +52,35 @@ func (m *MongoClient) Close(ctx context.Context) error {
 	return m.client.Disconnect(ctx)
 }
 
+func (m *MongoClient) Categories(ctx context.Context) ([]models.Category, error) {
+	coll := m.client.Database(m.mongoDatabase).Collection(m.mongoCollection)
+
+	filter := bson.M{"categories": "exists"}
+
+	cursor, err := coll.Find(ctx, filter)
+	if err != nil {
+		return nil, err
+	}
+
+	defer cursor.Close(ctx)
+
+	var categories []models.Category
+
+	if err := cursor.All(ctx, &categories); err != nil {
+		return nil, err
+	}
+
+	if err := cursor.Err(); err != nil {
+		return nil, err
+	}
+
+	return categories, nil
+}
+
 func (m *MongoClient) Weapons(ctx context.Context) ([]*models.Params, error) {
 	coll := m.client.Database(m.mongoDatabase).Collection(m.mongoCollection)
 
-	filter := bson.M{}
+	filter := bson.M{"name": bson.M{"$ne": nil}}
 
 	cursor, err := coll.Find(ctx, filter)
 	if err != nil {
@@ -207,7 +233,7 @@ func (m *MongoClient) SearchWeapon(ctx context.Context, keyWord string) ([]*mode
 	}
 
 	if len(weapons) == 0 {
-		return nil, fmt.Errorf("nothing found: %s", keyWord)
+		return nil, fmt.Errorf("nothing found for %s", keyWord)
 	}
 
 	return weapons, nil

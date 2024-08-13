@@ -35,7 +35,7 @@ func (s *Server) handleWeapon(w http.ResponseWriter, r *http.Request) error {
 }
 
 func (s *Server) handleCategories(w http.ResponseWriter, r *http.Request) error {
-	categories, err := s.postgres.Categories(r.Context())
+	categories, err := s.mongo.Categories(r.Context())
 	if err != nil {
 		s.logger.WithFields(log.Fields{
 			"request_id": fmt.Sprintf("%d", os.Getpid()),
@@ -79,7 +79,7 @@ func (s *Server) handleWeaponByName(w http.ResponseWriter, r *http.Request) erro
 		return err
 	}
 
-	s.logger.Infof("got %s weapon", name)
+	s.logger.Infof("got weapon: %s", name)
 
 	return lib.WriteJSON(w, http.StatusOK, weapon)
 }
@@ -122,7 +122,7 @@ func (s *Server) handleInsertWeapon(w http.ResponseWriter, r *http.Request) erro
 		return err
 	}
 
-	s.logger.Infof("insert %s weapon", req.Name)
+	s.logger.Infof("insert weapon: %s", req.Name)
 
 	return lib.WriteJSON(w, http.StatusOK, struct{}{})
 }
@@ -149,7 +149,7 @@ func (s *Server) handleUpdateWeapon(w http.ResponseWriter, r *http.Request) erro
 		return err
 	}
 
-	s.logger.Infof("update %s weapon", req.Name)
+	s.logger.Infof("update weapon: %s", req.Name)
 
 	return lib.WriteJSON(w, http.StatusOK, struct{}{})
 }
@@ -166,7 +166,7 @@ func (s *Server) handleDeleteWeapon(w http.ResponseWriter, r *http.Request) erro
 		return err
 	}
 
-	s.logger.Infof("delete %s weapon", name)
+	s.logger.Infof("delete weapon: %s", name)
 
 	return lib.WriteJSON(w, http.StatusOK, struct{}{})
 }

@@ -3,7 +3,7 @@ package models
 import "go.mongodb.org/mongo-driver/bson"
 
 type Category struct {
-	Name string `json:"category"`
+	Category string `json:"category"`
 }
 
 type PhysicalProp struct {
