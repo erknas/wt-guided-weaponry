@@ -25,13 +25,12 @@ type Store interface {
 
 type MongoClient struct {
 	client          *mongo.Client
-	mongoURL        string
 	mongoDatabase   string
 	mongoCollection string
 }
 
-func New(ctx context.Context, mongoURL, mongoDatabase, mongoCollection string) (*MongoClient, error) {
-	client, err := mongo.Connect(ctx, options.Client().ApplyURI(mongoURL))
+func New(ctx context.Context, mongoURI, mongoDatabase, mongoCollection string) (*MongoClient, error) {
+	client, err := mongo.Connect(ctx, options.Client().ApplyURI(mongoURI))
 	if err != nil {
 		return nil, err
 	}
@@ -42,7 +41,6 @@ func New(ctx context.Context, mongoURL, mongoDatabase, mongoCollection string) (
 
 	return &MongoClient{
 		client:          client,
-		mongoURL:        mongoURL,
 		mongoDatabase:   mongoDatabase,
 		mongoCollection: mongoCollection,
 	}, nil

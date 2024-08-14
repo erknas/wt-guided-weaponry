@@ -20,7 +20,7 @@ func main() {
 
 	var (
 		port            = os.Getenv("PORT")
-		mongoURL        = os.Getenv("MONGO_URL")
+		mongoURI        = os.Getenv("MONGO_URI")
 		mongoDatabase   = os.Getenv("MONGODB_DATABASE")
 		mongoCollection = os.Getenv("MONGODB_COLLECTION")
 	)
@@ -28,7 +28,7 @@ func main() {
 	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 	defer cancel()
 
-	mongoClient, err := mongodb.New(ctx, mongoURL, mongoDatabase, mongoCollection)
+	mongoClient, err := mongodb.New(ctx, mongoURI, mongoDatabase, mongoCollection)
 	if err != nil {
 		log.Fatal(err)
 	}
