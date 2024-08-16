@@ -19,7 +19,6 @@ type Store interface {
 	WeaponsByCategory(context.Context, string) ([]*models.Params, error)
 	InsertWeapon(context.Context, *models.Params) error
 	UpdateWeapon(context.Context, string, *models.Params) error
-	DeleteWeapon(context.Context, string) error
 	SearchWeapon(context.Context, string) ([]*models.Params, error)
 }
 
@@ -97,10 +96,6 @@ func (m *MongoClient) Weapons(ctx context.Context) ([]*models.Params, error) {
 		return nil, err
 	}
 
-	if len(weapons) == 0 {
-		return nil, fmt.Errorf("weapons not found")
-	}
-
 	return weapons, nil
 }
 
@@ -113,9 +108,9 @@ func (m *MongoClient) WeaponByName(ctx context.Context, name string) (*models.Pa
 
 	err := coll.FindOne(ctx, filter).Decode(weapon)
 	if errors.Is(err, mongo.ErrNoDocuments) {
-		return nil, fmt.Errorf("weapon not found: %s", name)
+		return nil, err
 	} else if err != nil {
-		return nil, fmt.Errorf("failed to get weapon: %s", name)
+		return nil, err
 	}
 
 	return weapon, nil
@@ -144,7 +139,7 @@ func (m *MongoClient) WeaponsByCategory(ctx context.Context, category string) ([
 	}
 
 	if len(weapons) == 0 {
-		return nil, fmt.Errorf("weapons not found for %s category", category)
+		return nil, fmt.Errorf("")
 	}
 
 	return weapons, nil
@@ -162,7 +157,7 @@ func (m *MongoClient) InsertWeapon(ctx context.Context, params *models.Params) e
 	}
 
 	if count != 0 {
-		return fmt.Errorf("weapon already exists: %s", params.Name)
+		return fmt.Errorf("")
 	}
 
 	_, err = coll.InsertOne(ctx, weapon)
@@ -185,24 +180,7 @@ func (m *MongoClient) UpdateWeapon(ctx context.Context, name string, params *mod
 	}
 
 	if res.MatchedCount == 0 {
-		return fmt.Errorf("weapon not found: %s", name)
-	}
-
-	return nil
-}
-
-func (m *MongoClient) DeleteWeapon(ctx context.Context, name string) error {
-	coll := m.client.Database(m.mongoDatabase).Collection(m.mongoCollection)
-
-	filter := bson.M{"name": name}
-
-	res, err := coll.DeleteOne(ctx, filter)
-	if err != nil {
-		return err
-	}
-
-	if res.DeletedCount == 0 {
-		return fmt.Errorf("weapon not found: %s", name)
+		return fmt.Errorf("")
 	}
 
 	return nil
@@ -228,10 +206,6 @@ func (m *MongoClient) SearchWeapon(ctx context.Context, keyWord string) ([]*mode
 
 	if err := cursor.Err(); err != nil {
 		return nil, err
-	}
-
-	if len(weapons) == 0 {
-		return nil, fmt.Errorf("nothing found for %s", keyWord)
 	}
 
 	return weapons, nil

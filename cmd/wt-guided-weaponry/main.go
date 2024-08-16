@@ -10,7 +10,6 @@ import (
 
 	"github.com/zeze322/wt-guided-weaponry/internal/api"
 	"github.com/zeze322/wt-guided-weaponry/internal/db/mongodb"
-	"github.com/zeze322/wt-guided-weaponry/internal/logger"
 )
 
 func main() {
@@ -39,9 +38,7 @@ func main() {
 
 	defer mongoClient.Close(ctx)
 
-	logger := logger.SetupLogger()
-
-	server := api.NewServer(logger, port, mongoClient)
+	server := api.NewServer(port, mongoClient)
 
 	if err := server.Run(); err != nil {
 		log.Fatal(err)

@@ -2,40 +2,41 @@ package api
 
 import (
 	"fmt"
+	"log"
 	"net/http"
 
+	"github.com/go-chi/chi/middleware"
 	"github.com/go-chi/chi/v5"
-	log "github.com/sirupsen/logrus"
 
 	"github.com/zeze322/wt-guided-weaponry/internal/db/mongodb"
 	"github.com/zeze322/wt-guided-weaponry/lib"
 )
 
 type Server struct {
-	logger *log.Logger
-	port   string
-	mongo  mongodb.Store
+	port  string
+	mongo mongodb.Store
 }
 
-func NewServer(logger *log.Logger, port string, mongo mongodb.Store) *Server {
+func NewServer(port string, mongo mongodb.Store) *Server {
 	return &Server{
-		logger: logger,
-		port:   port,
-		mongo:  mongo,
+		port:  port,
+		mongo: mongo,
 	}
 }
 
 func (s *Server) Run() error {
 	router := chi.NewRouter()
 
-	router.HandleFunc("/categories", lib.MakeHTTP(s.handleCategories))
-	router.HandleFunc("/categories/{category}", lib.MakeHTTP(s.handleWeaponsByCategory))
-	router.HandleFunc("/weapons", lib.MakeHTTP(s.handleWeapons))
-	router.HandleFunc("/weapon", lib.MakeHTTP(s.handleInsertWeapon))
-	router.HandleFunc("/weapon/{name}", lib.MakeHTTP(s.handleWeapon))
-	router.HandleFunc("/search/{search}", lib.MakeHTTP(s.handleSearchWeapon))
+	router.Use(middleware.Logger)
 
-	log.Info("Running on http://localhost:8000")
+	router.Get("/", lib.MakeHTTP(s.handleCategories))
+	router.Get("/category/{category}", lib.MakeHTTP(s.handleWeaponsByCategory))
+	router.HandleFunc("/weapon/{name}", lib.MakeHTTP(s.handleWeapon))
+	router.Post("/weapon", lib.MakeHTTP(s.handleInsertWeapon))
+	router.Get("/search/{search}", lib.MakeHTTP(s.handleSearchWeapon))
+	router.Get("/weapons", lib.MakeHTTP(s.handleWeapons))
+
+	log.Printf("Running on http://localhost%s", s.port)
 
 	if err := http.ListenAndServe(s.port, router); err != nil {
 		return fmt.Errorf("failed to start server: %s", err)

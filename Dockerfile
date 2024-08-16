@@ -4,15 +4,16 @@ WORKDIR /app
 
 COPY . .
 
-RUN CGO_ENABLED=0 go build -o main cmd/wt-guided-weaponry/main.go
+RUN CGO_ENABLED=0 GOOS=linux go build -o main cmd/wt-guided-weaponry/main.go
 
-FROM alpine:latest
+FROM scratch
 
 WORKDIR /app
 
 COPY --from=builder /app/main /app/main
 COPY .env /app/.env
 
-EXPOSE 8000
+ARG PORT
+EXPOSE $PORT
 
 CMD ["./main"]

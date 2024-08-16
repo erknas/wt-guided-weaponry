@@ -4,10 +4,8 @@ import (
 	"encoding/json"
 	"fmt"
 	"net/http"
-	"os"
 
 	"github.com/go-chi/chi/v5"
-	log "github.com/sirupsen/logrus"
 
 	"github.com/zeze322/wt-guided-weaponry/lib"
 	"github.com/zeze322/wt-guided-weaponry/models"
@@ -27,8 +25,6 @@ func (s *Server) handleWeapon(w http.ResponseWriter, r *http.Request) error {
 		return s.handleWeaponByName(w, r)
 	case "PUT":
 		return s.handleUpdateWeapon(w, r)
-	case "DELETE":
-		return s.handleDeleteWeapon(w, r)
 	}
 
 	return fmt.Errorf("method not allowed: %s", r.Method)
@@ -37,15 +33,8 @@ func (s *Server) handleWeapon(w http.ResponseWriter, r *http.Request) error {
 func (s *Server) handleCategories(w http.ResponseWriter, r *http.Request) error {
 	categories, err := s.mongo.Categories(r.Context())
 	if err != nil {
-		s.logger.WithFields(log.Fields{
-			"request_id": fmt.Sprintf("%d", os.Getpid()),
-			"path":       r.URL.Path,
-			"error":      err,
-		}).Debug("handleCategories error")
 		return err
 	}
-
-	s.logger.Infof("got %d categories", len(categories))
 
 	return lib.WriteJSON(w, http.StatusOK, CategoriesResponse{Categories: categories})
 }
@@ -53,15 +42,8 @@ func (s *Server) handleCategories(w http.ResponseWriter, r *http.Request) error 
 func (s *Server) handleWeapons(w http.ResponseWriter, r *http.Request) error {
 	weapons, err := s.mongo.Weapons(r.Context())
 	if err != nil {
-		s.logger.WithFields(log.Fields{
-			"request_id": fmt.Sprintf("%d", os.Getpid()),
-			"path":       r.URL.Path,
-			"error":      err,
-		}).Debug("handleWeapons error")
 		return err
 	}
-
-	s.logger.Infof("got %d weapons", len(weapons))
 
 	return lib.WriteJSON(w, http.StatusOK, WeaponsResponse{Weapons: weapons})
 }
@@ -71,15 +53,8 @@ func (s *Server) handleWeaponByName(w http.ResponseWriter, r *http.Request) erro
 
 	weapon, err := s.mongo.WeaponByName(r.Context(), name)
 	if err != nil {
-		s.logger.WithFields(log.Fields{
-			"request_id": fmt.Sprintf("%d", os.Getpid()),
-			"path":       r.URL.Path,
-			"error":      err,
-		}).Debug("handleWeaponByName error")
-		return err
+		return lib.InvalidRequest(name)
 	}
-
-	s.logger.Infof("got weapon: %s", name)
 
 	return lib.WriteJSON(w, http.StatusOK, weapon)
 }
@@ -89,15 +64,8 @@ func (s *Server) handleWeaponsByCategory(w http.ResponseWriter, r *http.Request)
 
 	weapons, err := s.mongo.WeaponsByCategory(r.Context(), category)
 	if err != nil {
-		s.logger.WithFields(log.Fields{
-			"request_id": fmt.Sprintf("%d", os.Getpid()),
-			"path":       r.URL.Path,
-			"error":      err,
-		}).Debug("handleWeaponsByCategory error")
-		return err
+		return lib.InvalidRequest(category)
 	}
-
-	s.logger.Infof("got %d weapons", len(weapons))
 
 	return lib.WriteJSON(w, http.StatusOK, WeaponsResponse{Weapons: weapons})
 }
@@ -108,21 +76,13 @@ func (s *Server) handleInsertWeapon(w http.ResponseWriter, r *http.Request) erro
 	}
 
 	req := new(models.Params)
-
 	if err := json.NewDecoder(r.Body).Decode(req); err != nil {
 		return err
 	}
 
 	if err := s.mongo.InsertWeapon(r.Context(), req); err != nil {
-		s.logger.WithFields(log.Fields{
-			"request_id": fmt.Sprintf("%d", os.Getpid()),
-			"path":       r.URL.Path,
-			"error":      err,
-		}).Debug("handleInsertWeapon error")
-		return err
+		return lib.InvalidInsertData(req.Name)
 	}
-
-	s.logger.Infof("insert weapon: %s", req.Name)
 
 	return lib.WriteJSON(w, http.StatusOK, struct{}{})
 }
@@ -132,41 +92,12 @@ func (s *Server) handleUpdateWeapon(w http.ResponseWriter, r *http.Request) erro
 
 	req := new(models.Params)
 	if err := json.NewDecoder(r.Body).Decode(req); err != nil {
-		s.logger.WithFields(log.Fields{
-			"request_id": fmt.Sprintf("%d", os.Getpid()),
-			"path":       r.URL.Path,
-			"error":      err,
-		}).Debug("handleUpdateWeapon json decode error")
 		return err
 	}
 
 	if err := s.mongo.UpdateWeapon(r.Context(), name, req); err != nil {
-		s.logger.WithFields(log.Fields{
-			"request_id": fmt.Sprintf("%d", os.Getpid()),
-			"path":       r.URL.Path,
-			"error":      err,
-		}).Debug("handleUpdateWeapon error")
-		return err
+		return lib.InvalidUpdateData(name)
 	}
-
-	s.logger.Infof("update weapon: %s", req.Name)
-
-	return lib.WriteJSON(w, http.StatusOK, struct{}{})
-}
-
-func (s *Server) handleDeleteWeapon(w http.ResponseWriter, r *http.Request) error {
-	name := chi.URLParam(r, "name")
-
-	if err := s.mongo.DeleteWeapon(r.Context(), name); err != nil {
-		s.logger.WithFields(log.Fields{
-			"request_id": fmt.Sprintf("%d", os.Getpid()),
-			"path":       r.URL.Path,
-			"error":      err,
-		}).Debug("handleDeleteWeapon error")
-		return err
-	}
-
-	s.logger.Infof("delete weapon: %s", name)
 
 	return lib.WriteJSON(w, http.StatusOK, struct{}{})
 }
@@ -176,15 +107,8 @@ func (s *Server) handleSearchWeapon(w http.ResponseWriter, r *http.Request) erro
 
 	weapons, err := s.mongo.SearchWeapon(r.Context(), search)
 	if err != nil {
-		s.logger.WithFields(log.Fields{
-			"request_id": fmt.Sprintf("%d", os.Getpid()),
-			"path":       r.URL.Path,
-			"error":      err,
-		}).Debug("handleSearchWeapon error")
 		return err
 	}
-
-	s.logger.Infof("found %d weapons", len(weapons))
 
 	return lib.WriteJSON(w, http.StatusOK, WeaponsResponse{Weapons: weapons})
 }
