@@ -9,6 +9,7 @@ import (
 
 	"github.com/zeze322/wt-guided-weaponry/lib"
 	"github.com/zeze322/wt-guided-weaponry/models"
+	"github.com/zeze322/wt-guided-weaponry/views/home"
 )
 
 type CategoriesResponse struct {
@@ -36,7 +37,7 @@ func (s *Server) handleCategories(w http.ResponseWriter, r *http.Request) error 
 		return err
 	}
 
-	return lib.WriteJSON(w, http.StatusOK, CategoriesResponse{Categories: categories})
+	return lib.Render(w, r, home.Home(categories))
 }
 
 func (s *Server) handleWeapons(w http.ResponseWriter, r *http.Request) error {
@@ -51,12 +52,12 @@ func (s *Server) handleWeapons(w http.ResponseWriter, r *http.Request) error {
 func (s *Server) handleWeaponByName(w http.ResponseWriter, r *http.Request) error {
 	name := chi.URLParam(r, "name")
 
-	weapon, err := s.mongo.WeaponByName(r.Context(), name)
+	params, err := s.mongo.WeaponByName(r.Context(), name)
 	if err != nil {
 		return lib.InvalidRequest(name)
 	}
 
-	return lib.WriteJSON(w, http.StatusOK, weapon)
+	return lib.WriteJSON(w, http.StatusOK, params)
 }
 
 func (s *Server) handleWeaponsByCategory(w http.ResponseWriter, r *http.Request) error {

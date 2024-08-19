@@ -9,6 +9,7 @@ require (
 )
 
 require (
+	github.com/a-h/templ v0.2.747
 	github.com/go-chi/chi v1.5.5
 	github.com/golang/snappy v0.0.4 // indirect
 	github.com/klauspost/compress v1.13.6 // indirect

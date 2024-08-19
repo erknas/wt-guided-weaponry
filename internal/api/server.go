@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"os"
 
 	"github.com/go-chi/chi/middleware"
 	"github.com/go-chi/chi/v5"
@@ -29,6 +30,8 @@ func (s *Server) Run() error {
 
 	router.Use(middleware.Logger)
 
+	router.Handle("/*", public())
+
 	router.Get("/", lib.MakeHTTP(s.handleCategories))
 	router.Get("/category/{category}", lib.MakeHTTP(s.handleWeaponsByCategory))
 	router.HandleFunc("/weapon/{name}", lib.MakeHTTP(s.handleWeapon))
@@ -43,4 +46,8 @@ func (s *Server) Run() error {
 	}
 
 	return nil
+}
+
+func public() http.Handler {
+	return http.StripPrefix("/public/", http.FileServerFS(os.DirFS("public")))
 }

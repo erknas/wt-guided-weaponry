@@ -1,0 +1,19 @@
+package home
+
+import (
+	"github.com/zeze322/wt-guided-weaponry/models"
+	"github.com/zeze322/wt-guided-weaponry/views/layout"
+)
+
+templ Home(categories []models.Category) {
+	@layout.Base() {
+		<details class="dropdown mx-5">
+			<summary class="flex justify-start btn w-52 m-1 bg-neutral rounded-box">Missile type</summary>
+			<ul class="menu dropdown-content bg-neutral rounded-box z-[1] w-52 m-1 shadow">
+				for _, category := range categories {
+					<li class="flex flex-col items-left"><a>{ category.Category }</a></li>
+				}
+			</ul>
+		</details>
+	}
+}
