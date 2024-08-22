@@ -8,12 +8,9 @@ package home
 import "github.com/a-h/templ"
 import templruntime "github.com/a-h/templ/runtime"
 
-import (
-	"github.com/zeze322/wt-guided-weaponry/models"
-	"github.com/zeze322/wt-guided-weaponry/views/layout"
-)
+import "github.com/zeze322/wt-guided-weaponry/views/layout"
 
-func Home(categories []models.Category) templ.Component {
+func Home() templ.Component {
 	return templruntime.GeneratedTemplate(func(templ_7745c5c3_Input templruntime.GeneratedComponentInput) (templ_7745c5c3_Err error) {
 		templ_7745c5c3_W, ctx := templ_7745c5c3_Input.Writer, templ_7745c5c3_Input.Context
 		templ_7745c5c3_Buffer, templ_7745c5c3_IsBuffer := templruntime.GetBuffer(templ_7745c5c3_W)
@@ -43,30 +40,7 @@ func Home(categories []models.Category) templ.Component {
 				}()
 			}
 			ctx = templ.InitializeContext(ctx)
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<details class=\"dropdown mx-5\"><summary class=\"flex justify-start btn w-52 m-1 bg-neutral rounded-box\">Missile type</summary><ul class=\"menu dropdown-content bg-neutral rounded-box z-[1] w-52 m-1 shadow\">")
-			if templ_7745c5c3_Err != nil {
-				return templ_7745c5c3_Err
-			}
-			for _, category := range categories {
-				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<li class=\"flex flex-col items-left\"><a>")
-				if templ_7745c5c3_Err != nil {
-					return templ_7745c5c3_Err
-				}
-				var templ_7745c5c3_Var3 string
-				templ_7745c5c3_Var3, templ_7745c5c3_Err = templ.JoinStringErrs(category.Category)
-				if templ_7745c5c3_Err != nil {
-					return templ.Error{Err: templ_7745c5c3_Err, FileName: `views/home/home.templ`, Line: 14, Col: 64}
-				}
-				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var3))
-				if templ_7745c5c3_Err != nil {
-					return templ_7745c5c3_Err
-				}
-				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</a></li>")
-				if templ_7745c5c3_Err != nil {
-					return templ_7745c5c3_Err
-				}
-			}
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</ul></details>")
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<button id=\"dropdownDefaultButton\" data-dropdown-toggle=\"dropdown\" class=\"text-gray-700 bg-white absolute top-2 left-10 focus:outline-none rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center\" type=\"button\">Missile type  <svg class=\"w-2.5 h-2.5 ms-3\" aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 10 6\"><path stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"m1 1 4 4 4-4\"></path></svg></button><div id=\"dropdown\" class=\"z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44\"><ul class=\"py-2 text-sm text-gray-700\" aria-labelledby=\"dropdownDefaultButton\"><li><a href=\"#\" class=\"block px-4 py-2 hover:bg-gray-200\">AAM (IR rear-aspect)</a></li><li><a href=\"#\" class=\"block px-4 py-2 hover:bg-gray-200\">AAM (IR all-aspect)</a></li><li><a href=\"#\" class=\"block px-4 py-2 hover:bg-gray-200\">AAM (IR heli)</a></li><li><a href=\"#\" class=\"block px-4 py-2 hover:bg-gray-200\">AAM (SARH)</a></li><li><a href=\"#\" class=\"block px-4 py-2 hover:bg-gray-200\">AAM (ARH)</a></li><li><a href=\"#\" class=\"block px-4 py-2 hover:bg-gray-200\">AAM (MCLOS/LOSBR)</a></li><li><a href=\"#\" class=\"block px-4 py-2 hover:bg-gray-200\">AGM (Automatic)</a></li><li><a href=\"#\" class=\"block px-4 py-2 hover:bg-gray-200\">AGM (SALH)</a></li><li><a href=\"#\" class=\"block px-4 py-2 hover:bg-gray-200\">AGM (SACLOS)</a></li><li><a href=\"#\" class=\"block px-4 py-2 hover:bg-gray-200\">AGM (MCLOS)</a></li><li><a href=\"#\" class=\"block px-4 py-2 hover:bg-gray-200\">AGM (LOSBR)</a></li><li><a href=\"#\" class=\"block px-4 py-2 hover:bg-gray-200\">GBU</a></li><li><a href=\"#\" class=\"block px-4 py-2 hover:bg-gray-200\">SAM (IR)</a></li><li><a href=\"#\" class=\"block px-4 py-2 hover:bg-gray-200\">SAM (SACLOS/LOSBR)</a></li><li><a href=\"#\" class=\"block px-4 py-2 hover:bg-gray-200\">ATGM (MCLOS)</a></li><li><a href=\"#\" class=\"block px-4 py-2 hover:bg-gray-200\">ATGM (SACLOS)</a></li><li><a href=\"#\" class=\"block px-4 py-2 hover:bg-gray-200\">ATGM (LOSBR)</a></li><li><a href=\"#\" class=\"block px-4 py-2 hover:bg-gray-200\">ATGM (Automatic)</a></li><li><a href=\"#\" class=\"block px-4 py-2 hover:bg-gray-200\">AShM</a></li></ul></div>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}

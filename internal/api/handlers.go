@@ -10,6 +10,7 @@ import (
 	"github.com/zeze322/wt-guided-weaponry/lib"
 	"github.com/zeze322/wt-guided-weaponry/models"
 	"github.com/zeze322/wt-guided-weaponry/views/home"
+	"github.com/zeze322/wt-guided-weaponry/views/rearaspect"
 )
 
 type CategoriesResponse struct {
@@ -32,12 +33,12 @@ func (s *Server) handleWeapon(w http.ResponseWriter, r *http.Request) error {
 }
 
 func (s *Server) handleCategories(w http.ResponseWriter, r *http.Request) error {
-	categories, err := s.mongo.Categories(r.Context())
+	_, err := s.mongo.Categories(r.Context())
 	if err != nil {
 		return err
 	}
 
-	return lib.Render(w, r, home.Home(categories))
+	return lib.Render(w, r, home.Home())
 }
 
 func (s *Server) handleWeapons(w http.ResponseWriter, r *http.Request) error {
@@ -68,7 +69,7 @@ func (s *Server) handleWeaponsByCategory(w http.ResponseWriter, r *http.Request)
 		return lib.InvalidRequest(category)
 	}
 
-	return lib.WriteJSON(w, http.StatusOK, WeaponsResponse{Weapons: weapons})
+	return lib.Render(w, r, rearaspect.RearAspect(weapons))
 }
 
 func (s *Server) handleInsertWeapon(w http.ResponseWriter, r *http.Request) error {
