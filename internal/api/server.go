@@ -32,7 +32,7 @@ func (s *Server) Run() error {
 
 	router.Handle("/*", public())
 
-	router.Get("/", lib.MakeHTTP(s.handleCategories))
+	router.Get("/", lib.MakeHTTP(s.handleHome))
 	router.Get("/category/{category}", lib.MakeHTTP(s.handleWeaponsByCategory))
 	router.HandleFunc("/weapon/{name}", lib.MakeHTTP(s.handleWeapon))
 	router.Post("/weapon", lib.MakeHTTP(s.handleInsertWeapon))

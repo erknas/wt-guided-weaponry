@@ -1,11 +1,70 @@
 package rearaspect
 
-import (
-	"github.com/zeze322/wt-guided-weaponry/models"
-	"github.com/zeze322/wt-guided-weaponry/views/layout"
-)
+import "github.com/zeze322/wt-guided-weaponry/models"
 
 templ RearAspect(weapons []*models.Params) {
-	@layout.Base() {
-	}
+	<div class="ml-52 mt-2 sm:rounded-lg">
+		<table class="text-center rtl:text-right text-gray-500 dark:text-gray-400">
+			<thead class="text-mono text-gray-700 bg-gray-200 dark:bg-gray-700 dark:text-gray-400">
+				<tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+					<th scope="col" class="px-2 py-4 text-left border-r dark:border-gray-700 text-xl font-normal">
+						Name
+					</th>
+					<th scope="col" class="px-2 py-2 border-r dark:border-gray-700">
+						{ weapons[0].Name }
+					</th>
+					<th scope="col" class="px-2 py-2 border-r dark:border-gray-700">
+						{ weapons[1].Name }
+					</th>
+					<th scope="col" class="px-2 py-2 border-r dark:border-gray-700">
+						{ weapons[0].Name }
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class="bg-white border-b  dark:border-gray-700">
+					<th scope="row" class="px-2 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white text-left border-r dark:border-gray-700">
+						Mass: [kg]	
+					</th>
+					<td class="px-6 py-4 border-r dark:border-gray-700">
+						{ weapons[0].Mass }
+					</td>
+					<td class="px-6 py-4 border-r dark:border-gray-700">
+						{ weapons[1].Mass }
+					</td>
+					<td class="px-6 py-4 border-r dark:border-gray-700">
+						{ weapons[1].Mass }
+					</td>
+				</tr>
+				<tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+					<th scope="row" class="px-2 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white text-left border-r dark:border-gray-700">
+						Mass at end of booster burn: [kg]
+					</th>
+					<td class="px-6 py-4 border-r dark:border-gray-700">
+						{ weapons[0].MassAtEndOfBoosterBurn }
+					</td>
+					<td class="px-6 py-4 border-r dark:border-gray-700">
+						{ weapons[1].MassAtEndOfBoosterBurn }
+					</td>
+					<td class="px-6 py-4 border-r dark:border-gray-700">
+						{ weapons[1].MassAtEndOfBoosterBurn }
+					</td>
+				</tr>
+				<tr class="bg-white dark:bg-gray-800">
+					<th scope="row" class="px-2 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white text-left border-r dark:border-gray-700">
+						Mass at end of sustainer burn: [kg]
+					</th>
+					<td class="px-6 py-4 border-r dark:border-gray-700">
+						{ weapons[0].MassAtEndOfSustainerBurn }
+					</td>
+					<td class="px-6 py-4 border-r dark:border-gray-700">
+						{ weapons[1].MassAtEndOfSustainerBurn }
+					</td>
+					<td class="px-6 py-4 border-r dark:border-gray-700">
+						{ weapons[1].MassAtEndOfSustainerBurn }
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
 }

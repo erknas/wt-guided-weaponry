@@ -32,12 +32,7 @@ func (s *Server) handleWeapon(w http.ResponseWriter, r *http.Request) error {
 	return fmt.Errorf("method not allowed: %s", r.Method)
 }
 
-func (s *Server) handleCategories(w http.ResponseWriter, r *http.Request) error {
-	_, err := s.mongo.Categories(r.Context())
-	if err != nil {
-		return err
-	}
-
+func (s *Server) handleHome(w http.ResponseWriter, r *http.Request) error {
 	return lib.Render(w, r, home.Home())
 }
 
