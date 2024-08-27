@@ -9,6 +9,8 @@ import (
 
 	"github.com/zeze322/wt-guided-weaponry/lib"
 	"github.com/zeze322/wt-guided-weaponry/models"
+	"github.com/zeze322/wt-guided-weaponry/views/agmsalh"
+	"github.com/zeze322/wt-guided-weaponry/views/atgmautomatic"
 	"github.com/zeze322/wt-guided-weaponry/views/home"
 	"github.com/zeze322/wt-guided-weaponry/views/rearaspect"
 )
@@ -59,12 +61,28 @@ func (s *Server) handleWeaponByName(w http.ResponseWriter, r *http.Request) erro
 func (s *Server) handleWeaponsByCategory(w http.ResponseWriter, r *http.Request) error {
 	category := chi.URLParam(r, "category")
 
-	weapons, err := s.mongo.WeaponsByCategory(r.Context(), category)
-	if err != nil {
-		return lib.InvalidRequest(category)
+	switch category {
+	case "ir-rear-aspect":
+		weapons, err := s.mongo.WeaponsByCategory(r.Context(), category)
+		if err != nil {
+			return err
+		}
+		return lib.Render(w, r, rearaspect.RearAspect(weapons))
+	case "agm-salh":
+		weapons, err := s.mongo.WeaponsByCategory(r.Context(), category)
+		if err != nil {
+			return err
+		}
+		return lib.Render(w, r, agmsalh.AgmSalh(weapons))
+	case "atgm-automatic":
+		weapons, err := s.mongo.WeaponsByCategory(r.Context(), category)
+		if err != nil {
+			return err
+		}
+		return lib.Render(w, r, atgmautomatic.AtgmAutomatic(weapons))
 	}
 
-	return lib.Render(w, r, rearaspect.RearAspect(weapons))
+	return nil
 }
 
 func (s *Server) handleInsertWeapon(w http.ResponseWriter, r *http.Request) error {
