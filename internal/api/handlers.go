@@ -11,12 +11,13 @@ import (
 	"github.com/zeze322/wt-guided-weaponry/models"
 	"github.com/zeze322/wt-guided-weaponry/views/agmsalh"
 	"github.com/zeze322/wt-guided-weaponry/views/atgmautomatic"
+	"github.com/zeze322/wt-guided-weaponry/views/components/search"
 	"github.com/zeze322/wt-guided-weaponry/views/home"
 	"github.com/zeze322/wt-guided-weaponry/views/rearaspect"
 )
 
-type CategoriesResponse struct {
-	Categories []models.Category `json:"categories"`
+type SearchResponse struct {
+	Name []models.Name `json:"weapons"`
 }
 
 type WeaponsResponse struct {
@@ -25,8 +26,6 @@ type WeaponsResponse struct {
 
 func (s *Server) handleWeapon(w http.ResponseWriter, r *http.Request) error {
 	switch r.Method {
-	case "GET":
-		return s.handleWeaponByName(w, r)
 	case "PUT":
 		return s.handleUpdateWeapon(w, r)
 	}
@@ -35,10 +34,24 @@ func (s *Server) handleWeapon(w http.ResponseWriter, r *http.Request) error {
 }
 
 func (s *Server) handleHome(w http.ResponseWriter, r *http.Request) error {
+
 	return lib.Render(w, r, home.Home())
 }
 
+func (s *Server) handleCategories(w http.ResponseWriter, r *http.Request) error {
+	categories, err := s.mongo.Categories(r.Context())
+	if err != nil {
+		return err
+	}
+
+	return lib.WriteJSON(w, http.StatusOK, categories)
+}
+
 func (s *Server) handleWeapons(w http.ResponseWriter, r *http.Request) error {
+	if r.FormValue("search") != "" {
+		return s.handleSearchWeapon(w, r)
+	}
+
 	weapons, err := s.mongo.Weapons(r.Context())
 	if err != nil {
 		return err
@@ -47,19 +60,8 @@ func (s *Server) handleWeapons(w http.ResponseWriter, r *http.Request) error {
 	return lib.WriteJSON(w, http.StatusOK, WeaponsResponse{Weapons: weapons})
 }
 
-func (s *Server) handleWeaponByName(w http.ResponseWriter, r *http.Request) error {
-	name := chi.URLParam(r, "name")
-
-	params, err := s.mongo.WeaponByName(r.Context(), name)
-	if err != nil {
-		return lib.InvalidRequest(name)
-	}
-
-	return lib.WriteJSON(w, http.StatusOK, params)
-}
-
 func (s *Server) handleWeaponsByCategory(w http.ResponseWriter, r *http.Request) error {
-	category := chi.URLParam(r, "category")
+	category := r.FormValue("name")
 
 	switch category {
 	case "ir-rear-aspect":
@@ -118,12 +120,12 @@ func (s *Server) handleUpdateWeapon(w http.ResponseWriter, r *http.Request) erro
 }
 
 func (s *Server) handleSearchWeapon(w http.ResponseWriter, r *http.Request) error {
-	search := chi.URLParam(r, "search")
+	keyWord := r.FormValue("search")
 
-	weapons, err := s.mongo.SearchWeapon(r.Context(), search)
+	weapons, err := s.mongo.SearchWeapon(r.Context(), keyWord)
 	if err != nil {
 		return err
 	}
 
-	return lib.WriteJSON(w, http.StatusOK, WeaponsResponse{Weapons: weapons})
+	return lib.Render(w, r, search.SearchResult(weapons))
 }

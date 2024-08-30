@@ -2,7 +2,6 @@ package mongodb
 
 import (
 	"context"
-	"errors"
 	"fmt"
 
 	"go.mongodb.org/mongo-driver/bson"
@@ -15,11 +14,10 @@ import (
 type Store interface {
 	Categories(context.Context) ([]models.Category, error)
 	Weapons(context.Context) ([]*models.Params, error)
-	WeaponByName(context.Context, string) (*models.Params, error)
 	WeaponsByCategory(context.Context, string) ([]*models.Params, error)
 	InsertWeapon(context.Context, *models.Params) error
 	UpdateWeapon(context.Context, string, *models.Params) error
-	SearchWeapon(context.Context, string) ([]*models.Params, error)
+	SearchWeapon(context.Context, string) ([]models.Name, error)
 }
 
 type MongoClient struct {
@@ -99,23 +97,6 @@ func (m *MongoClient) Weapons(ctx context.Context) ([]*models.Params, error) {
 	return weapons, nil
 }
 
-func (m *MongoClient) WeaponByName(ctx context.Context, name string) (*models.Params, error) {
-	coll := m.client.Database(m.mongoDatabase).Collection(m.mongoCollection)
-
-	weapon := new(models.Params)
-
-	filter := bson.M{"name": name}
-
-	err := coll.FindOne(ctx, filter).Decode(weapon)
-	if errors.Is(err, mongo.ErrNoDocuments) {
-		return nil, err
-	} else if err != nil {
-		return nil, err
-	}
-
-	return weapon, nil
-}
-
 func (m *MongoClient) WeaponsByCategory(ctx context.Context, category string) ([]*models.Params, error) {
 	coll := m.client.Database(m.mongoDatabase).Collection(m.mongoCollection)
 
@@ -186,7 +167,7 @@ func (m *MongoClient) UpdateWeapon(ctx context.Context, name string, params *mod
 	return nil
 }
 
-func (m *MongoClient) SearchWeapon(ctx context.Context, keyWord string) ([]*models.Params, error) {
+func (m *MongoClient) SearchWeapon(ctx context.Context, keyWord string) ([]models.Name, error) {
 	coll := m.client.Database(m.mongoDatabase).Collection(m.mongoCollection)
 
 	filter := bson.D{{"$text", bson.D{{"$search", keyWord}}}}
@@ -198,7 +179,7 @@ func (m *MongoClient) SearchWeapon(ctx context.Context, keyWord string) ([]*mode
 
 	defer cursor.Close(ctx)
 
-	var weapons []*models.Params
+	var weapons []models.Name
 
 	if err := cursor.All(ctx, &weapons); err != nil {
 		return nil, err

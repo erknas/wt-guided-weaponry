@@ -2,6 +2,10 @@ package models
 
 import "go.mongodb.org/mongo-driver/bson"
 
+type Name struct {
+	Name string `json:"name"`
+}
+
 type Category struct {
 	Category string `json:"category"`
 }
