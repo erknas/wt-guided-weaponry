@@ -5,6 +5,7 @@ import (
 	"fmt"
 
 	"go.mongodb.org/mongo-driver/bson"
+	"go.mongodb.org/mongo-driver/bson/primitive"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
 
@@ -170,7 +171,7 @@ func (m *MongoClient) UpdateWeapon(ctx context.Context, name string, params *mod
 func (m *MongoClient) SearchWeapon(ctx context.Context, keyWord string) ([]models.Name, error) {
 	coll := m.client.Database(m.mongoDatabase).Collection(m.mongoCollection)
 
-	filter := bson.D{{"$text", bson.D{{"$search", keyWord}}}}
+	filter := bson.D{{Key: "name", Value: primitive.Regex{Pattern: keyWord, Options: "i"}}}
 
 	cursor, err := coll.Find(ctx, filter)
 	if err != nil {
