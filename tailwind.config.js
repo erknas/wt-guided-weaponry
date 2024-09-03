@@ -3,6 +3,6 @@ module.exports = {
   content: [ "./**/*.html", "./**/*.templ", "./**/*.go","./node_modules/flowbite/**/*.js"],
   safelist: [],
   plugins: [require('daisyui'), require('flowbite/plugin')],
-  daisyui: {themes: ["dark", "nord", "black"]},
+  daisyui: {themes: ["business", "nord", "black"]},
   darkMode: 'media'
 }

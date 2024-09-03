@@ -11,9 +11,32 @@ import (
 	"github.com/zeze322/wt-guided-weaponry/models"
 	"github.com/zeze322/wt-guided-weaponry/views/agmsalh"
 	"github.com/zeze322/wt-guided-weaponry/views/atgmautomatic"
+	"github.com/zeze322/wt-guided-weaponry/views/atgmlosbr"
 	"github.com/zeze322/wt-guided-weaponry/views/components/search"
 	"github.com/zeze322/wt-guided-weaponry/views/home"
 	"github.com/zeze322/wt-guided-weaponry/views/rearaspect"
+)
+
+const (
+	irRearAspect   = "ir-rear-aspect"
+	irAllAspect    = "ir-all-aspect"
+	IrHeli         = "ir-heli"
+	aamSarh        = "aam-sarh"
+	aamArh         = "aamArh"
+	aamMclosLosbr  = "aam-mclos-losbr"
+	agmAutomatic   = "agm-automatic"
+	agmSalh        = "agm-salh"
+	agmSaclos      = "agm-saclos"
+	agmMclos       = "agm-mclos"
+	agmLosbr       = "agm-losbr"
+	gbu            = "gbu"
+	samIr          = "sam-ir"
+	samSaclosLosbr = "sam-saclos-losbr"
+	atgmMclos      = "atgm-mclos"
+	atgmSaclos     = "atgm-saclos"
+	atgmLosbr      = "atgm-losbr"
+	atgmAutomatic  = "atgm-automatic"
+	ashm           = "ashm"
 )
 
 type SearchResponse struct {
@@ -64,24 +87,36 @@ func (s *Server) handleWeaponsByCategory(w http.ResponseWriter, r *http.Request)
 	category := r.FormValue("name")
 
 	switch category {
-	case "ir-rear-aspect":
+	case irRearAspect:
 		weapons, err := s.mongo.WeaponsByCategory(r.Context(), category)
 		if err != nil {
 			return err
 		}
 		return lib.Render(w, r, rearaspect.RearAspect(weapons))
-	case "agm-salh":
+	case irAllAspect:
+		weapons, err := s.mongo.WeaponsByCategory(r.Context(), category)
+		if err != nil {
+			return err
+		}
+		return lib.Render(w, r, rearaspect.RearAspect(weapons))
+	case agmSalh:
 		weapons, err := s.mongo.WeaponsByCategory(r.Context(), category)
 		if err != nil {
 			return err
 		}
 		return lib.Render(w, r, agmsalh.AgmSalh(weapons))
-	case "atgm-automatic":
+	case atgmAutomatic:
 		weapons, err := s.mongo.WeaponsByCategory(r.Context(), category)
 		if err != nil {
 			return err
 		}
 		return lib.Render(w, r, atgmautomatic.AtgmAutomatic(weapons))
+	case atgmLosbr:
+		weapons, err := s.mongo.WeaponsByCategory(r.Context(), category)
+		if err != nil {
+			return err
+		}
+		return lib.Render(w, r, atgmlosbr.AtgmLosbr(weapons))
 	}
 
 	return nil

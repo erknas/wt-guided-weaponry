@@ -121,7 +121,7 @@ func (m *MongoClient) WeaponsByCategory(ctx context.Context, category string) ([
 	}
 
 	if len(weapons) == 0 {
-		return nil, fmt.Errorf("")
+		return nil, fmt.Errorf("nothing found")
 	}
 
 	return weapons, nil
@@ -139,7 +139,7 @@ func (m *MongoClient) InsertWeapon(ctx context.Context, params *models.Params) e
 	}
 
 	if count != 0 {
-		return fmt.Errorf("")
+		return fmt.Errorf("%s already exists", params.Name)
 	}
 
 	_, err = coll.InsertOne(ctx, weapon)
@@ -162,7 +162,7 @@ func (m *MongoClient) UpdateWeapon(ctx context.Context, name string, params *mod
 	}
 
 	if res.MatchedCount == 0 {
-		return fmt.Errorf("")
+		return fmt.Errorf("%s doesn't exist", name)
 	}
 
 	return nil
