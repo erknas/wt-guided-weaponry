@@ -190,5 +190,9 @@ func (m *MongoClient) SearchWeapon(ctx context.Context, keyWord string) ([]model
 		return nil, err
 	}
 
+	if len(weapons) == 0 {
+		return nil, fmt.Errorf("nothing found")
+	}
+
 	return weapons, nil
 }

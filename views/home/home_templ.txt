@@ -1,2 +1,2 @@
 <div class=\"navbar bg-base-100\">
-</div><div id=\"params\"></div>
+</div><div id=\"search-result\" class=\"ml-56\"></div><div id=\"params\"></div>

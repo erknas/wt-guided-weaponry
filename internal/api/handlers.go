@@ -47,15 +47,6 @@ type WeaponsResponse struct {
 	Weapons []*models.Params `json:"weapons"`
 }
 
-func (s *Server) handleWeapon(w http.ResponseWriter, r *http.Request) error {
-	switch r.Method {
-	case "PUT":
-		return s.handleUpdateWeapon(w, r)
-	}
-
-	return fmt.Errorf("method not allowed: %s", r.Method)
-}
-
 func (s *Server) handleHome(w http.ResponseWriter, r *http.Request) error {
 
 	return lib.Render(w, r, home.Home())
@@ -140,6 +131,10 @@ func (s *Server) handleInsertWeapon(w http.ResponseWriter, r *http.Request) erro
 }
 
 func (s *Server) handleUpdateWeapon(w http.ResponseWriter, r *http.Request) error {
+	if r.Method != "PUT" {
+		return fmt.Errorf("method not allowed: %s", r.Method)
+	}
+
 	name := chi.URLParam(r, "name")
 
 	req := new(models.Params)
@@ -156,6 +151,10 @@ func (s *Server) handleUpdateWeapon(w http.ResponseWriter, r *http.Request) erro
 
 func (s *Server) handleSearchWeapon(w http.ResponseWriter, r *http.Request) error {
 	keyWord := r.FormValue("search")
+
+	if keyWord == "" {
+		return nil
+	}
 
 	weapons, err := s.mongo.SearchWeapon(r.Context(), keyWord)
 	if err != nil {

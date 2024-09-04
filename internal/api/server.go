@@ -33,12 +33,12 @@ func (s *Server) Run() error {
 	router.Handle("/*", public())
 
 	router.Get("/", lib.MakeHTTP(s.handleHome))
-	router.Get("/category", lib.MakeHTTP(s.handleCategories))
+	router.Get("/dev/category", lib.MakeHTTP(s.handleCategories))
+	router.Get("/dev/weapons", lib.MakeHTTP(s.handleWeapons))
 	router.Get("/category", lib.MakeHTTP(s.handleWeaponsByCategory))
-	router.HandleFunc("/weapon/{name}", lib.MakeHTTP(s.handleWeapon))
+	router.Get("/search", lib.MakeHTTP(s.handleSearchWeapon))
+	router.Put("/weapon/{name}", lib.MakeHTTP(s.handleUpdateWeapon))
 	router.Post("/weapon", lib.MakeHTTP(s.handleInsertWeapon))
-	router.Get("/weapons", lib.MakeHTTP(s.handleSearchWeapon))
-	router.Get("/weapons", lib.MakeHTTP(s.handleWeapons))
 
 	log.Printf("Running on http://localhost%s", s.port)
 
