@@ -8,11 +8,9 @@ import (
 
 templ Home() {
 	@layout.Base() {
-		<div class="navbar bg-base-100">
-			@search.SearchInput()
-			@dropdown.DropDownMenu()
-		</div>
-		<div id="search-result" class="ml-56"></div>
-		<div id="params"></div>
+		@dropdown.DropDownMenu()
+		@search.SearchInput()
+		<div id="search-result"></div>
+		<table id="params"></table>
 	}
 }
