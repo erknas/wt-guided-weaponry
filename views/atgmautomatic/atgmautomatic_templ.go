@@ -31,12 +31,12 @@ func AtgmAutomatic(weapons []*models.Params) templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 1)
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<div class=\"relative flex justify-center mb-6\"><table class=\"shadow-md sm:rounded-lg text-center rtl:text-right text-gray-900\"><thead class=\"sticky top-0\"><tr class=\"\"><th scope=\"col\" class=\"px-2 py-4 text-left border-r border-gray-700 text-black bg-gray-200\">Name</th>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		for _, weapon := range weapons {
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 2)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<th scope=\"col\" class=\"px-2 border-r dark:border-gray-700 text-black bg-gray-300\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -49,12 +49,12 @@ func AtgmAutomatic(weapons []*models.Params) templ.Component {
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 3)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</th>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 		}
-		templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 4)
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</tr></thead> <tbody class=\"font-normal text-sm\"><th scope=\"row\" class=\"px-2 py-4 text-xl text-black text-left bg-gray-300 border-t border-b border-gray-700\" colspan=\"")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -67,12 +67,12 @@ func AtgmAutomatic(weapons []*models.Params) templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 5)
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\">Physical props</th><tr class=\"border-b dark:border-gray-700\"><th scope=\"row\" class=\"px-2 py-1 font-medium text-gray-900 whitespace-nowrap text-left border-r dark:border-gray-700 bg-gray-200\">Mass [kg]</th>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		for _, weapon := range weapons {
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 6)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<td class=\"border-r dark:border-gray-700 bg-gray-300\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -85,17 +85,17 @@ func AtgmAutomatic(weapons []*models.Params) templ.Component {
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 7)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</td>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 		}
-		templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 8)
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</tr><tr class=\"bg-white border-b dark:border-gray-700\"><th scope=\"row\" class=\"px-2 py-1 font-medium text-gray-900 whitespace-nowrap dark:text-white text-left border-r dark:border-gray-700 bg-gray-200\">Mass at end of booster burn [kg]</th>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		for _, weapon := range weapons {
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 9)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<td class=\"border-r dark:border-gray-700 bg-gray-300\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -108,17 +108,17 @@ func AtgmAutomatic(weapons []*models.Params) templ.Component {
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 10)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</td>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 		}
-		templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 11)
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</tr><tr class=\"bg-white border-b dark:bg-gray-800 dark:border-gray-700\"><th scope=\"row\" class=\"px-2 py-1 font-medium text-gray-900 whitespace-nowrap dark:text-white text-left border-r dark:border-gray-700 bg-gray-200\">Mass at end of sustainer burn [kg]</th>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		for _, weapon := range weapons {
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 12)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<td class=\"border-r dark:border-gray-700 bg-gray-300\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -131,17 +131,17 @@ func AtgmAutomatic(weapons []*models.Params) templ.Component {
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 13)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</td>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 		}
-		templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 14)
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</tr><tr class=\"bg-white border-b dark:bg-gray-800 dark:border-gray-700\"><th scope=\"row\" class=\"px-2 py-1 font-medium text-gray-900 whitespace-nowrap dark:text-white text-left border-r dark:border-gray-700 bg-gray-200\">Calibre [mm]</th>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		for _, weapon := range weapons {
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 15)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<td class=\"border-r dark:border-gray-700 bg-gray-300\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -154,17 +154,17 @@ func AtgmAutomatic(weapons []*models.Params) templ.Component {
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 16)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</td>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 		}
-		templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 17)
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</tr><tr class=\"bg-white dark:bg-gray-800 dark:border-gray-700\"><th scope=\"row\" class=\"px-2 py-1 font-medium text-gray-900 whitespace-nowrap dark:text-white text-left border-r dark:border-gray-700 bg-gray-200\">Length [m]</th>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		for _, weapon := range weapons {
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 18)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<td class=\"border-r dark:border-gray-700 bg-gray-300\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -177,17 +177,17 @@ func AtgmAutomatic(weapons []*models.Params) templ.Component {
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 19)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</td>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 		}
-		templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 20)
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</tr><th scope=\"row\" class=\"px-2 py-4 text-xl text-black text-left font-mono bg-gray-300 border-t border-b border-gray-700\" colspan=\"4\">Engine props</th><tr class=\"bg-white border-b dark:bg-gray-800 dark:border-gray-700\"><th scope=\"row\" class=\"px-2 py-1 font-medium text-gray-900 whitespace-nowrap dark:text-white text-left border-r dark:border-gray-700 bg-gray-200\">Force exerted by booster [N]</th>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		for _, weapon := range weapons {
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 21)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<td class=\"border-r dark:border-gray-700 bg-gray-300\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -200,17 +200,17 @@ func AtgmAutomatic(weapons []*models.Params) templ.Component {
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 22)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</td>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 		}
-		templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 23)
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</tr><tr class=\"bg-white border-b border-t dark:bg-gray-800 dark:border-gray-700\"><th scope=\"row\" class=\"px-2 py-1 font-medium text-gray-900 whitespace-nowrap dark:text-white text-left border-r dark:border-gray-700 bg-gray-200\">Burn time of booster [s]</th>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		for _, weapon := range weapons {
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 24)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<td class=\"border-r dark:border-gray-700 bg-gray-300\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -223,17 +223,17 @@ func AtgmAutomatic(weapons []*models.Params) templ.Component {
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 25)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</td>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 		}
-		templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 26)
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</tr><tr class=\"bg-white border-b border-t dark:bg-gray-800 dark:border-gray-700\"><th scope=\"row\" class=\"px-2 py-1 font-medium text-gray-900 whitespace-nowrap dark:text-white text-left border-r dark:border-gray-700 bg-gray-200\">Raw acceleration at ignition [m/s²]</th>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		for _, weapon := range weapons {
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 27)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<td class=\"border-r dark:border-gray-700 bg-gray-300\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -246,17 +246,17 @@ func AtgmAutomatic(weapons []*models.Params) templ.Component {
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 28)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</td>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 		}
-		templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 29)
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</tr><tr class=\"bg-white border-b border-t dark:bg-gray-800 dark:border-gray-700\"><th scope=\"row\" class=\"px-2 py-1 font-medium text-gray-900 whitespace-nowrap dark:text-white text-left border-r dark:border-gray-700 bg-gray-200\">Specific impulse of booster [s]</th>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		for _, weapon := range weapons {
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 30)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<td class=\"border-r dark:border-gray-700 bg-gray-300\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -269,17 +269,17 @@ func AtgmAutomatic(weapons []*models.Params) templ.Component {
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 31)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</td>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 		}
-		templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 32)
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</tr><tr class=\"bg-white border-b border-t dark:bg-gray-800 dark:border-gray-700\"><th scope=\"row\" class=\"px-2 py-1 font-medium text-gray-900 whitespace-nowrap dark:text-white text-left border-r dark:border-gray-700 bg-gray-200\">ΔV of booster [m/s]</th>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		for _, weapon := range weapons {
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 33)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<td class=\"border-r dark:border-gray-700 bg-gray-300\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -292,17 +292,17 @@ func AtgmAutomatic(weapons []*models.Params) templ.Component {
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 34)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</td>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 		}
-		templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 35)
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</tr><tr class=\"bg-white border-b border-t dark:bg-gray-800 dark:border-gray-700\"><th scope=\"row\" class=\"px-2 py-1 font-medium text-gray-900 whitespace-nowrap dark:text-white text-left border-r dark:border-gray-700 bg-gray-200\">Force exerted by sustainer [N]</th>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		for _, weapon := range weapons {
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 36)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<td class=\"border-r dark:border-gray-700 bg-gray-300\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -315,17 +315,17 @@ func AtgmAutomatic(weapons []*models.Params) templ.Component {
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 37)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</td>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 		}
-		templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 38)
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</tr><tr class=\"bg-white border-b border-t dark:bg-gray-800 dark:border-gray-700\"><th scope=\"row\" class=\"px-2 py-1 font-medium text-gray-900 whitespace-nowrap dark:text-white text-left border-r dark:border-gray-700 bg-gray-200\">Burn time of sustainer [s]</th>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		for _, weapon := range weapons {
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 39)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<td class=\"border-r dark:border-gray-700 bg-gray-300\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -338,17 +338,17 @@ func AtgmAutomatic(weapons []*models.Params) templ.Component {
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 40)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</td>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 		}
-		templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 41)
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</tr><tr class=\"bg-white border-b border-t dark:bg-gray-800 dark:border-gray-700\"><th scope=\"row\" class=\"px-2 py-1 font-medium text-gray-900 whitespace-nowrap dark:text-white text-left border-r dark:border-gray-700 bg-gray-200\">Specific impulse of sustainer [s]</th>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		for _, weapon := range weapons {
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 42)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<td class=\"border-r dark:border-gray-700 bg-gray-300\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -361,17 +361,17 @@ func AtgmAutomatic(weapons []*models.Params) templ.Component {
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 43)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</td>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 		}
-		templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 44)
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</tr><tr class=\"bg-white border-b border-t dark:bg-gray-800 dark:border-gray-700\"><th scope=\"row\" class=\"px-2 py-1 font-medium text-gray-900 whitespace-nowrap dark:text-white text-left border-r dark:border-gray-700 bg-gray-200\">ΔV of sustainer [m/s]</th>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		for _, weapon := range weapons {
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 45)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<td class=\"border-r dark:border-gray-700 bg-gray-300\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -384,17 +384,17 @@ func AtgmAutomatic(weapons []*models.Params) templ.Component {
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 46)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</td>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 		}
-		templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 47)
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</tr><tr class=\"bg-white border-t dark:bg-gray-800 dark:border-gray-700\"><th scope=\"row\" class=\"px-2 py-1 font-medium text-gray-900 whitespace-nowrap dark:text-white text-left border-r dark:border-gray-700 bg-gray-200\">Total ΔV [m/s]</th>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		for _, weapon := range weapons {
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 48)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<td class=\"border-r dark:border-gray-700 bg-gray-300\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -407,17 +407,17 @@ func AtgmAutomatic(weapons []*models.Params) templ.Component {
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 49)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</td>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 		}
-		templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 50)
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</tr><th scope=\"row\" class=\"px-2 py-4 text-xl  text-black text-left font-mono bg-gray-300 border-t border-b border-gray-700\" colspan=\"4\">Fuse & Warhead props</th><tr class=\"bg-white border-b dark:bg-gray-800 dark:border-gray-700\"><th scope=\"row\" class=\"px-2 py-1 font-medium text-gray-900 whitespace-nowrap dark:text-white text-left border-r dark:border-gray-700 bg-gray-200\">Explosive mass [kg of TNT equivalent]</th>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		for _, weapon := range weapons {
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 51)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<td class=\"border-r dark:border-gray-700 bg-gray-300\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -430,17 +430,17 @@ func AtgmAutomatic(weapons []*models.Params) templ.Component {
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 52)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</td>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 		}
-		templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 53)
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</tr><tr class=\"bg-white border-b border-t dark:bg-gray-800 dark:border-gray-700\"><th scope=\"row\" class=\"px-2 py-1 font-medium text-gray-900 whitespace-nowrap dark:text-white text-left border-r dark:border-gray-700 bg-gray-200\">Tandem charge</th>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		for _, weapon := range weapons {
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 54)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<td class=\"border-r dark:border-gray-700 bg-gray-300\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -453,17 +453,17 @@ func AtgmAutomatic(weapons []*models.Params) templ.Component {
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 55)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</td>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 		}
-		templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 56)
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</tr><tr class=\"bg-white border-b border-t dark:bg-gray-800 dark:border-gray-700\"><th scope=\"row\" class=\"px-2 py-1 font-medium text-gray-900 whitespace-nowrap dark:text-white text-left border-r dark:border-gray-700 bg-gray-200\">Penetration [mm]</th>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		for _, weapon := range weapons {
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 57)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<td class=\"border-r dark:border-gray-700 bg-gray-300\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -476,17 +476,17 @@ func AtgmAutomatic(weapons []*models.Params) templ.Component {
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 58)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</td>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 		}
-		templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 59)
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</tr><tr class=\"bg-white border-b border-t dark:bg-gray-800 dark:border-gray-700\"><th scope=\"row\" class=\"px-2 py-1 font-medium text-gray-900 whitespace-nowrap dark:text-white text-left border-r dark:border-gray-700 bg-gray-200\">Proximity fuse</th>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		for _, weapon := range weapons {
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 60)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<td class=\"border-r dark:border-gray-700 bg-gray-300\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -499,17 +499,17 @@ func AtgmAutomatic(weapons []*models.Params) templ.Component {
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 61)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</td>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 		}
-		templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 62)
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</tr><tr class=\"bg-white border-b border-t dark:bg-gray-800 dark:border-gray-700\"><th scope=\"row\" class=\"px-2 py-1 font-medium text-gray-900 whitespace-nowrap dark:text-white text-left border-r dark:border-gray-700 bg-gray-200\">Proximity fuse range [m]</th>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		for _, weapon := range weapons {
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 63)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<td class=\"border-r dark:border-gray-700 bg-gray-300\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -522,17 +522,17 @@ func AtgmAutomatic(weapons []*models.Params) templ.Component {
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 64)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</td>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 		}
-		templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 65)
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</tr><tr class=\"bg-white border-t dark:bg-gray-800 dark:border-gray-700\"><th scope=\"row\" class=\"px-2 py-1 font-medium text-gray-900 whitespace-nowrap dark:text-white text-left border-r dark:border-gray-700 bg-gray-200\">Proximity fuse delay [s]</th>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		for _, weapon := range weapons {
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 66)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<td class=\"border-r dark:border-gray-700 bg-gray-300\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -545,17 +545,17 @@ func AtgmAutomatic(weapons []*models.Params) templ.Component {
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 67)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</td>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 		}
-		templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 68)
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</tr><th scope=\"row\" class=\"px-2 py-4 text-xl text-black text-left font-mono bg-gray-300 border-t border-b border-gray-700\" colspan=\"4\">Guidance props</th><tr class=\"bg-white border-b dark:bg-gray-800 dark:border-gray-700\"><th scope=\"row\" class=\"px-2 py-1 font-medium text-gray-900 whitespace-nowrap dark:text-white text-left border-r dark:border-gray-700 bg-gray-200\">Zoom</th>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		for _, weapon := range weapons {
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 69)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<td class=\"border-r dark:border-gray-700 bg-gray-300\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -568,17 +568,17 @@ func AtgmAutomatic(weapons []*models.Params) templ.Component {
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 70)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</td>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 		}
-		templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 71)
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</tr><tr class=\"bg-white border-b border-t dark:bg-gray-800 dark:border-gray-700\"><th scope=\"row\" class=\"px-2 py-1 font-medium text-gray-900 whitespace-nowrap dark:text-white text-left border-r dark:border-gray-700 bg-gray-200\">Guidance type</th>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		for _, weapon := range weapons {
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 72)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<td class=\"border-r dark:border-gray-700 bg-gray-300\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -591,17 +591,17 @@ func AtgmAutomatic(weapons []*models.Params) templ.Component {
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 73)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</td>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 		}
-		templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 74)
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</tr><tr class=\"bg-white border-b border-t dark:bg-gray-800 dark:border-gray-700\"><th scope=\"row\" class=\"px-2 py-1 font-medium text-gray-900 whitespace-nowrap dark:text-white text-left border-r dark:border-gray-700 bg-gray-200\">Guidance start delay [s]</th>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		for _, weapon := range weapons {
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 75)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<td class=\"border-r dark:border-gray-700 bg-gray-300\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -614,17 +614,17 @@ func AtgmAutomatic(weapons []*models.Params) templ.Component {
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 76)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</td>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 		}
-		templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 77)
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</tr><tr class=\"bg-white border-b border-t dark:bg-gray-800 dark:border-gray-700\"><th scope=\"row\" class=\"px-2 py-1 font-medium text-gray-900 whitespace-nowrap dark:text-white text-left border-r dark:border-gray-700 bg-gray-200\">Guidance duration [s]</th>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		for _, weapon := range weapons {
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 78)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<td class=\"border-r dark:border-gray-700 bg-gray-300\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -637,17 +637,17 @@ func AtgmAutomatic(weapons []*models.Params) templ.Component {
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 79)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</td>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 		}
-		templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 80)
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</tr><tr class=\"bg-white border-b border-t dark:bg-gray-800 dark:border-gray-700\"><th scope=\"row\" class=\"px-2 py-1 font-medium text-gray-900 whitespace-nowrap dark:text-white text-left border-r dark:border-gray-700 bg-gray-200\">Seeker warm up time [s]</th>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		for _, weapon := range weapons {
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 81)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<td class=\"border-r dark:border-gray-700 bg-gray-300\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -660,17 +660,17 @@ func AtgmAutomatic(weapons []*models.Params) templ.Component {
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 82)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</td>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 		}
-		templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 83)
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</tr><tr class=\"bg-white border-b border-t dark:bg-gray-800 dark:border-gray-700\"><th scope=\"row\" class=\"px-2 py-1 font-medium text-gray-900 whitespace-nowrap dark:text-white text-left border-r dark:border-gray-700 bg-gray-200\">Seeker search duration [s]</th>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		for _, weapon := range weapons {
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 84)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<td class=\"border-r dark:border-gray-700 bg-gray-300\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -683,17 +683,17 @@ func AtgmAutomatic(weapons []*models.Params) templ.Component {
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 85)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</td>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 		}
-		templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 86)
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</tr><tr class=\"bg-white border-b border-t dark:bg-gray-800 dark:border-gray-700\"><th scope=\"row\" class=\"px-2 py-1 font-medium text-gray-900 whitespace-nowrap dark:text-white text-left border-r dark:border-gray-700 bg-gray-200\">Field of view [degrees]</th>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		for _, weapon := range weapons {
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 87)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<td class=\"border-r dark:border-gray-700 bg-gray-300\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -706,17 +706,17 @@ func AtgmAutomatic(weapons []*models.Params) templ.Component {
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 88)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</td>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 		}
-		templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 89)
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</tr><tr class=\"bg-white border-b border-t dark:bg-gray-800 dark:border-gray-700\"><th scope=\"row\" class=\"px-2 py-1 font-medium text-gray-900 whitespace-nowrap dark:text-white text-left border-r dark:border-gray-700 bg-gray-200\">IRCCM field of view [degrees]</th>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		for _, weapon := range weapons {
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 90)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<td class=\"border-r dark:border-gray-700 bg-gray-300\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -729,17 +729,17 @@ func AtgmAutomatic(weapons []*models.Params) templ.Component {
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 91)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</td>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 		}
-		templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 92)
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</tr><tr class=\"bg-white border-b border-t dark:bg-gray-800 dark:border-gray-700\"><th scope=\"row\" class=\"px-2 py-1 font-medium text-gray-900 whitespace-nowrap dark:text-white text-left border-r dark:border-gray-700 bg-gray-200\">Gimbal limit [degrees]</th>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		for _, weapon := range weapons {
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 93)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<td class=\"border-r dark:border-gray-700 bg-gray-300\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -752,17 +752,17 @@ func AtgmAutomatic(weapons []*models.Params) templ.Component {
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 94)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</td>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 		}
-		templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 95)
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</tr><tr class=\"bg-white border-b border-t dark:bg-gray-800 dark:border-gray-700\"><th scope=\"row\" class=\"px-2 py-1 font-medium text-gray-900 whitespace-nowrap dark:text-white text-left border-r dark:border-gray-700 bg-gray-200\">Track rate [degrees/second]</th>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		for _, weapon := range weapons {
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 96)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<td class=\"border-r dark:border-gray-700 bg-gray-300\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -775,17 +775,17 @@ func AtgmAutomatic(weapons []*models.Params) templ.Component {
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 97)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</td>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 		}
-		templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 98)
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</tr><tr class=\"bg-white border-b border-t dark:bg-gray-800 dark:border-gray-700\"><th scope=\"row\" class=\"px-2 py-1 font-medium text-gray-900 whitespace-nowrap dark:text-white text-left border-r dark:border-gray-700 bg-gray-200\">Uncaged seeker before launch</th>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		for _, weapon := range weapons {
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 99)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<td class=\"border-r dark:border-gray-700 bg-gray-300\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -798,17 +798,17 @@ func AtgmAutomatic(weapons []*models.Params) templ.Component {
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 100)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</td>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 		}
-		templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 101)
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</tr><tr class=\"bg-white border-b border-t dark:bg-gray-800 dark:border-gray-700\"><th scope=\"row\" class=\"px-2 py-1 font-medium text-gray-900 whitespace-nowrap dark:text-white text-left border-r dark:border-gray-700 bg-gray-200\">Maximum lock angle before launch [degrees]</th>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		for _, weapon := range weapons {
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 102)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<td class=\"border-r dark:border-gray-700 bg-gray-300\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -821,17 +821,17 @@ func AtgmAutomatic(weapons []*models.Params) templ.Component {
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 103)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</td>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 		}
-		templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 104)
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</tr><tr class=\"bg-white border-b border-t dark:bg-gray-800 dark:border-gray-700\"><th scope=\"row\" class=\"px-2 py-1 font-medium text-gray-900 whitespace-nowrap dark:text-white text-left border-r dark:border-gray-700 bg-gray-200\">Minimum angle of incidence of the seeker to the Sun for it to not capture the Sun [degrees] </th>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		for _, weapon := range weapons {
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 105)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<td class=\"border-r dark:border-gray-700 bg-gray-300\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -844,17 +844,17 @@ func AtgmAutomatic(weapons []*models.Params) templ.Component {
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 106)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</td>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 		}
-		templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 107)
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</tr><tr class=\"bg-white border-b border-t dark:bg-gray-800 dark:border-gray-700\"><th scope=\"row\" class=\"px-2 py-1 font-medium text-gray-900 whitespace-nowrap dark:text-white text-left border-r dark:border-gray-700 bg-gray-200\">Can lock ground </th>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		for _, weapon := range weapons {
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 108)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<td class=\"border-r dark:border-gray-700 bg-gray-300\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -867,17 +867,17 @@ func AtgmAutomatic(weapons []*models.Params) templ.Component {
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 109)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</td>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 		}
-		templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 110)
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</tr><tr class=\"bg-white border-b border-t dark:bg-gray-800 dark:border-gray-700\"><th scope=\"row\" class=\"px-2 py-1 font-medium text-gray-900 whitespace-nowrap dark:text-white text-left border-r dark:border-gray-700 bg-gray-200\">Lock-on range (ground) [km]</th>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		for _, weapon := range weapons {
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 111)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<td class=\"border-r dark:border-gray-700 bg-gray-300\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -890,17 +890,17 @@ func AtgmAutomatic(weapons []*models.Params) templ.Component {
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 112)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</td>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 		}
-		templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 113)
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</tr><tr class=\"bg-white border-b border-t dark:bg-gray-800 dark:border-gray-700\"><th scope=\"row\" class=\"px-2 py-1 font-medium text-gray-900 whitespace-nowrap dark:text-white text-left border-r dark:border-gray-700 bg-gray-200\">Lock-on range from rear-aspect [km]</th>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		for _, weapon := range weapons {
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 114)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<td class=\"border-r dark:border-gray-700 bg-gray-300\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -913,17 +913,17 @@ func AtgmAutomatic(weapons []*models.Params) templ.Component {
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 115)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</td>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 		}
-		templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 116)
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</tr><tr class=\"bg-white border-b border-t dark:bg-gray-800 dark:border-gray-700\"><th scope=\"row\" class=\"px-2 py-1 font-medium text-gray-900 whitespace-nowrap dark:text-white text-left border-r dark:border-gray-700 bg-gray-200\">Lock-on range from all-aspect [km]</th>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		for _, weapon := range weapons {
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 117)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<td class=\"border-r dark:border-gray-700 bg-gray-300\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -936,17 +936,17 @@ func AtgmAutomatic(weapons []*models.Params) templ.Component {
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 118)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</td>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 		}
-		templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 119)
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</tr><tr class=\"bg-white border-t dark:bg-gray-800 dark:border-gray-700\"><th scope=\"row\" class=\"px-2 py-1 font-medium text-gray-900 whitespace-nowrap dark:text-white text-left border-r dark:border-gray-700 bg-gray-200\">Can lock after launch</th>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		for _, weapon := range weapons {
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 120)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<td class=\"border-r dark:border-gray-700 bg-gray-300\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -959,17 +959,17 @@ func AtgmAutomatic(weapons []*models.Params) templ.Component {
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 121)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</td>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 		}
-		templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 122)
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</tr><th scope=\"row\" class=\"px-2 py-4 text-xl  text-black text-left font-mono bg-gray-300 border-t border-b border-gray-700\" colspan=\"4\">Flight props</th><tr class=\"bg-white border-b dark:bg-gray-800 dark:border-gray-700\"><th scope=\"row\" class=\"px-2 py-1 font-medium text-gray-900 whitespace-nowrap dark:text-white text-left border-r dark:border-gray-700 bg-gray-200\">Maximum fin angle of attack [degrees]</th>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		for _, weapon := range weapons {
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 123)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<td class=\"border-r dark:border-gray-700 bg-gray-300\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -982,17 +982,17 @@ func AtgmAutomatic(weapons []*models.Params) templ.Component {
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 124)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</td>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 		}
-		templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 125)
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</tr><tr class=\"bg-white border-b border-t dark:bg-gray-800 dark:border-gray-700\"><th scope=\"row\" class=\"px-2 py-1 font-medium text-gray-900 whitespace-nowrap dark:text-white text-left border-r dark:border-gray-700 bg-gray-200\">Wing area multiplier</th>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		for _, weapon := range weapons {
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 126)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<td class=\"border-r dark:border-gray-700 bg-gray-300\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -1005,17 +1005,17 @@ func AtgmAutomatic(weapons []*models.Params) templ.Component {
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 127)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</td>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 		}
-		templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 128)
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</tr><tr class=\"bg-white border-b border-t dark:bg-gray-800 dark:border-gray-700\"><th scope=\"row\" class=\"px-2 py-1 font-medium text-gray-900 whitespace-nowrap dark:text-white text-left border-r dark:border-gray-700 bg-gray-200\">Start speed [m/s]</th>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		for _, weapon := range weapons {
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 129)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<td class=\"border-r dark:border-gray-700 bg-gray-300\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -1028,17 +1028,17 @@ func AtgmAutomatic(weapons []*models.Params) templ.Component {
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 130)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</td>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 		}
-		templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 131)
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</tr><tr class=\"bg-white border-b border-t dark:bg-gray-800 dark:border-gray-700\"><th scope=\"row\" class=\"px-2 py-1 font-medium text-gray-900 whitespace-nowrap dark:text-white text-left border-r dark:border-gray-700 bg-gray-200\">Maximum speed [m/s]</th>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		for _, weapon := range weapons {
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 132)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<td class=\"border-r dark:border-gray-700 bg-gray-300\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -1051,17 +1051,17 @@ func AtgmAutomatic(weapons []*models.Params) templ.Component {
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 133)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</td>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 		}
-		templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 134)
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</tr><tr class=\"bg-white border-b border-t dark:bg-gray-800 dark:border-gray-700\"><th scope=\"row\" class=\"px-2 py-1 font-medium text-gray-900 whitespace-nowrap dark:text-white text-left border-r dark:border-gray-700 bg-gray-200\">Minimum range [m]</th>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		for _, weapon := range weapons {
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 135)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<td class=\"border-r dark:border-gray-700 bg-gray-300\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -1074,17 +1074,17 @@ func AtgmAutomatic(weapons []*models.Params) templ.Component {
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 136)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</td>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 		}
-		templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 137)
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</tr><tr class=\"bg-white border-b border-t dark:bg-gray-800 dark:border-gray-700\"><th scope=\"row\" class=\"px-2 py-1 font-medium text-gray-900 whitespace-nowrap dark:text-white text-left border-r dark:border-gray-700 bg-gray-200\">Maximum (flight) range [km]</th>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		for _, weapon := range weapons {
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 138)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<td class=\"border-r dark:border-gray-700 bg-gray-300\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -1097,17 +1097,17 @@ func AtgmAutomatic(weapons []*models.Params) templ.Component {
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 139)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</td>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 		}
-		templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 140)
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</tr><tr class=\"bg-white border-b border-t dark:bg-gray-800 dark:border-gray-700\"><th scope=\"row\" class=\"px-2 py-1 font-medium text-gray-900 whitespace-nowrap dark:text-white text-left border-r dark:border-gray-700 bg-gray-200\">Load factor limit at launch [G]</th>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		for _, weapon := range weapons {
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 141)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<td class=\"border-r dark:border-gray-700 bg-gray-300\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -1120,17 +1120,17 @@ func AtgmAutomatic(weapons []*models.Params) templ.Component {
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 142)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</td>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 		}
-		templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 143)
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</tr><tr class=\"bg-white border-b border-t dark:bg-gray-800 dark:border-gray-700\"><th scope=\"row\" class=\"px-2 py-1 font-medium text-gray-900 whitespace-nowrap dark:text-white text-left border-r dark:border-gray-700 bg-gray-200\">Maximum G-load [G]</th>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		for _, weapon := range weapons {
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 144)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<td class=\"border-r dark:border-gray-700 bg-gray-300\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -1143,17 +1143,17 @@ func AtgmAutomatic(weapons []*models.Params) templ.Component {
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 145)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</td>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 		}
-		templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 146)
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</tr><tr class=\"bg-white border-b border-t dark:bg-gray-800 dark:border-gray-700\"><th scope=\"row\" class=\"px-2 py-1 font-medium text-gray-900 whitespace-nowrap dark:text-white text-left border-r dark:border-gray-700 bg-gray-200\">Thrust vectoring</th>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		for _, weapon := range weapons {
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 147)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<td class=\"border-r dark:border-gray-700 bg-gray-300\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -1166,17 +1166,17 @@ func AtgmAutomatic(weapons []*models.Params) templ.Component {
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 148)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</td>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 		}
-		templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 149)
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</tr><tr class=\"bg-white border-b border-t dark:bg-gray-800 dark:border-gray-700\"><th scope=\"row\" class=\"px-2 py-1 font-medium text-gray-900 whitespace-nowrap dark:text-white text-left border-r dark:border-gray-700 bg-gray-200\">Thrust vectoring angle [degreees]</th>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		for _, weapon := range weapons {
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 150)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<td class=\"border-r dark:border-gray-700 bg-gray-300\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -1189,17 +1189,17 @@ func AtgmAutomatic(weapons []*models.Params) templ.Component {
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 151)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</td>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 		}
-		templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 152)
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</tr><tr class=\"bg-white border-b border-t dark:bg-gray-800 dark:border-gray-700\"><th scope=\"row\" class=\"px-2 py-1 font-medium text-gray-900 whitespace-nowrap dark:text-white text-left border-r dark:border-gray-700 bg-gray-200\">Loft</th>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		for _, weapon := range weapons {
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 153)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<td class=\"border-r dark:border-gray-700 bg-gray-300\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -1212,17 +1212,17 @@ func AtgmAutomatic(weapons []*models.Params) templ.Component {
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 154)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</td>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 		}
-		templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 155)
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</tr><tr class=\"bg-white border-b border-t dark:bg-gray-800 dark:border-gray-700\"><th scope=\"row\" class=\"px-2 py-1 font-medium text-gray-900 whitespace-nowrap dark:text-white text-left border-r dark:border-gray-700 bg-gray-200\">Loft angle [degreees]</th>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		for _, weapon := range weapons {
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 156)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<td class=\"border-r dark:border-gray-700 bg-gray-300\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -1235,17 +1235,17 @@ func AtgmAutomatic(weapons []*models.Params) templ.Component {
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 157)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</td>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 		}
-		templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 158)
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</tr><tr class=\"bg-white border-b border-t dark:bg-gray-800 dark:border-gray-700\"><th scope=\"row\" class=\"px-2 py-1 font-medium text-gray-900 whitespace-nowrap dark:text-white text-left border-r dark:border-gray-700 bg-gray-200\">Target elevation [degrees]</th>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		for _, weapon := range weapons {
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 159)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<td class=\"border-r dark:border-gray-700 bg-gray-300\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -1258,17 +1258,17 @@ func AtgmAutomatic(weapons []*models.Params) templ.Component {
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 160)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</td>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 		}
-		templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 161)
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</tr><tr class=\"bg-white border-t dark:bg-gray-800 dark:border-gray-700\"><th scope=\"row\" class=\"px-2 py-1 font-medium text-gray-900 whitespace-nowrap dark:text-white text-left border-r dark:border-gray-700 bg-gray-200\">Maximum target angular change [degrees/s]</th>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		for _, weapon := range weapons {
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 162)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<td class=\"border-r dark:border-gray-700 bg-gray-300\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -1281,12 +1281,12 @@ func AtgmAutomatic(weapons []*models.Params) templ.Component {
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 163)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</td>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 		}
-		templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 164)
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</tr></tbody></table></div>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
