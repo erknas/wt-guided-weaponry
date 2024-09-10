@@ -31,7 +31,7 @@ func SearchInput() templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<div class=\"relative\"><input style=\"width: 156.38px\" id=\"search\" class=\"absolute z-50 top-5 h-10 left-52 pl-3 pr-2 py-2 bg-transparent text-gray-200 border border-slate-200 transition duration-300 ease focus:outline-none focus:border-violet-500 hover:border-violet-500 shadow-sm focus:shadow-md font-mono text-sm\" placeholder=\"Search\" hx-get=\"/search\" hx-vals=\"js:{search: document.getElementById(&#39;search&#39;).value}\" hx-trigger=\"input changed delay:300ms, search\" hx-target=\"#search-result\"></div>")
+		templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 1)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -57,43 +57,43 @@ func SearchResult(weapons []models.Name) templ.Component {
 			templ_7745c5c3_Var2 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<div style=\"width: 156.38px\" class=\"absolute top-14 left-52 bg-gray-700 divide-y text-sm font-mono z-50\"><ul class=\"text-sm text-gray-200 border border-violet-500\" aria-labelledby=\"dropdownDefaultButton\">")
+		templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 2)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		for _, weapon := range weapons {
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<li><a class=\"block px-2 py-2 hover:bg-slate-600 select-none\" hx-target=\"#params\" hx-get=\"")
+			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 3)
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 			var templ_7745c5c3_Var3 string
 			templ_7745c5c3_Var3, templ_7745c5c3_Err = templ.JoinStringErrs(fmt.Sprintf("/category?name=%s", weapon.Category))
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `views/components/search/search.templ`, Line: 28, Col: 141}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `views/components/search/search.templ`, Line: 38, Col: 141}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var3))
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\">")
+			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 4)
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 			var templ_7745c5c3_Var4 string
 			templ_7745c5c3_Var4, templ_7745c5c3_Err = templ.JoinStringErrs(weapon.Name)
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `views/components/search/search.templ`, Line: 28, Col: 157}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `views/components/search/search.templ`, Line: 38, Col: 157}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var4))
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</a></li>")
+			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 5)
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</ul></div>")
+		templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 6)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

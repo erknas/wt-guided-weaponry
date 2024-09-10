@@ -10,13 +10,23 @@ templ SearchInput() {
 		<input
 			style="width: 156.38px"
 			id="search"
-			class="absolute z-50 top-5 h-10 left-52 pl-3 pr-2 py-2 bg-transparent text-gray-200 border border-slate-200 transition duration-300 ease focus:outline-none focus:border-violet-500 hover:border-violet-500 shadow-sm focus:shadow-md font-mono text-sm"
+			class="absolute left-52 top-5  z-50 h-10 pl-3 pr-2 py-2 bg-transparent text-gray-200 border border-slate-200 transition duration-300 ease focus:outline-none focus:border-violet-500 hover:border-violet-500 shadow-sm focus:shadow-md font-mono text-sm"
 			placeholder="Search"
 			hx-get="/search"
 			hx-vals="js:{search: document.getElementById('search').value}"
 			hx-trigger="input changed delay:300ms, search"
 			hx-target="#search-result"
 		/>
+		<button
+			class="absolute top-7 left-[330px] z-50 h-5 w-6 text-gray-400 hover:text-slate-200 transition duration-300 ease"
+			onclick="document.getElementById('search').value = ''"
+			hx-get="search?search="
+			hx-target="#search-result"
+		>
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+				<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+			</svg>
+		</button>
 	</div>
 }
 
