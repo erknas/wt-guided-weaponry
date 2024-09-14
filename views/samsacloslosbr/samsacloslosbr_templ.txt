@@ -52,7 +52,22 @@
 \"><span class=\"sticky left-0\">Fuse & Warhead props</span></th><tr class=\"hover:bg-gray-700 hover:text-gray-100\"><td class=\"border border-gray-500 text-left px-1 sticky left-0 bg-gray-700\">Explosive mass: [kg of TNT equivalent]</td>
 <td class=\"border border-gray-500 px-2\">
 </td>
-</tr><tr class=\"hover:bg-gray-700 hover:text-gray-100\"><td class=\"border border-gray-500 text-left px-1 sticky left-0 bg-gray-700\">Tandem charge:</td>
+</tr><tr class=\"hover:bg-gray-700 hover:text-gray-100\"><td class=\"border border-gray-500 text-left px-1 sticky left-0 bg-gray-700\">Proximity fuse:</td>
+<td class=\"border border-gray-500 px-2\">
+</td>
+</tr><tr class=\"hover:bg-gray-700 hover:text-gray-100\"><td class=\"border border-gray-500 text-left px-1 sticky left-0 bg-gray-700\">Proximity fuse range: [m]</td>
+<td class=\"border border-gray-500 px-2\">
+</td>
+</tr><tr class=\"hover:bg-gray-700 hover:text-gray-100\"><td class=\"border border-gray-500 text-left px-1 sticky left-0 bg-gray-700\">Proximity fuse arming distance: [m]</td>
+<td class=\"border border-gray-500 px-2\">
+</td>
+</tr><tr class=\"hover:bg-gray-700 hover:text-gray-100\"><td class=\"border border-gray-500 text-left px-1 sticky left-0 bg-gray-700\">Proximity fuse minimum altitude: [m]</td>
+<td class=\"border border-gray-500 px-2\">
+</td>
+</tr><tr class=\"hover:bg-gray-700 hover:text-gray-100\"><td class=\"border border-gray-500 text-left px-1 sticky left-0 bg-gray-700\">Proximity fuse shell detection (80-200 mm):</td>
+<td class=\"border border-gray-500 px-2\">
+</td>
+</tr><tr class=\"hover:bg-gray-700 hover:text-gray-100\"><td class=\"border border-gray-500 text-left px-1 sticky left-0 bg-gray-700\">Proximity fuse delay: [s]</td>
 <td class=\"border border-gray-500 px-2\">
 </td>
 </tr><tr class=\"hover:bg-gray-700 hover:text-gray-100\"><td class=\"border border-gray-500 text-left px-1 sticky left-0 bg-gray-700\">Penetration: [mm]</td>
@@ -69,8 +84,17 @@
 <td class=\"border border-gray-500 px-2\">
 </td>
 </tr><th class=\"py-1 text-xl text-black text-left bg-blue-400 border border-gray-500\" colspan=\"
-\"><span class=\"sticky left-0\">Flight props</span></th><tr class=\"hover:bg-gray-700 hover:text-gray-100\"><td class=\"border border-gray-500 text-left px-1 sticky left-0 bg-gray-700\">Maximum fin angle of attack: [degrees]</td>
+\"><span class=\"sticky left-0\">Flight props</span></th><tr class=\"hover:bg-gray-700 hover:text-gray-100\"><td class=\"border border-gray-500 text-left px-1 sticky left-0 bg-gray-700\">Maximum axis values:</td>
 <td class=\"border border-gray-500  px-2\">
+</td>
+</tr><tr class=\"hover:bg-gray-700 hover:text-gray-100\"><td class=\"border border-gray-500 text-left px-1 sticky left-0 bg-gray-700\">Maximum fin angle of attack: [degrees]</td>
+<td class=\"border border-gray-500  px-2\">
+</td>
+</tr><tr class=\"hover:bg-gray-700 hover:text-gray-100\"><td class=\"border border-gray-500 text-left px-1 sticky left-0 bg-gray-700\">Maximum fin lateral acceleration:</td>
+<td class=\"border border-gray-500  px-2\">
+</td>
+</tr><tr class=\"hover:bg-gray-700 hover:text-gray-100\"><td class=\"border border-gray-500 text-left px-1 sticky left-0 bg-gray-700\">Max lateral acceleration: [G]</td>
+<td class=\"border border-gray-500 px-2\">
 </td>
 </tr><tr class=\"hover:bg-gray-700 hover:text-gray-100\"><td class=\"border border-gray-500 text-left px-1 sticky left-0 bg-gray-700\">Wing area multiplier:</td>
 <td class=\"border border-gray-500 px-2\">
@@ -84,7 +108,7 @@
 </tr><tr class=\"hover:bg-gray-700 hover:text-gray-100\"><td class=\"border border-gray-500 text-left px-1 sticky left-0 bg-gray-700\">Maximum flight range: [km]</td>
 <td class=\"border border-gray-500 px-2\">
 </td>
-</tr><tr class=\"hover:bg-gray-700 hover:text-gray-100\"><td class=\"border border-gray-500 text-left px-1 sticky left-0 bg-gray-700\">Maximum G-overload:</td>
+</tr><tr class=\"hover:bg-gray-700 hover:text-gray-100\"><td class=\"border border-gray-500 text-left px-1 sticky left-0 bg-gray-700\">Has a tracer in its tail:</td>
 <td class=\"border border-gray-500 px-2\">
 </td>
 </tr></tbody></table></div>

@@ -1,11 +1,11 @@
-package rearaspect
+package irheli
 
 import (
 	"fmt"
 	"github.com/zeze322/wt-guided-weaponry/models"
 )
 
-templ RearAspect(weapons []*models.Params) {
+templ IrHeli(weapons []*models.Params) {
 	<div class="mt-5 h-[890px] w-[1530px] overflow-y-auto ml-96 container">
 		<table class="border-separate">
 			<thead class="sticky top-0 z-40 font-bold text-lg">
@@ -228,15 +228,45 @@ templ RearAspect(weapons []*models.Params) {
 					}
 				</tr>
 				<tr class="hover:bg-gray-700 hover:text-gray-100">
-					<td class="border border-gray-500 text-left px-1 sticky left-0 bg-gray-700">Flare and IRCM detection range: [km]</td>
+					<td class="border border-gray-500 text-left px-1 sticky left-0 bg-gray-700">Lock-on range from all-aspect: [km]</td>
+					for _, weapon := range weapons {
+						<td class="border border-gray-500 px-2">{ weapon.LockOnRangeFromAllAspect }</td>
+					}
+				</tr>
+				<tr class="hover:bg-gray-700 hover:text-gray-100">
+					<td class="border border-gray-500 text-left px-1 sticky left-0 bg-gray-700">Flare detection range: [km]</td>
 					for _, weapon := range weapons {
 						<td class="border border-gray-500 px-2">{ weapon.FlareDetectionRange }</td>
+					}
+				</tr>
+				<tr class="hover:bg-gray-700 hover:text-gray-100">
+					<td class="border border-gray-500 text-left px-1 sticky left-0 bg-gray-700">IRCM detection range: [km]</td>
+					for _, weapon := range weapons {
+						<td class="border border-gray-500 px-2">{ weapon.IRCMDetectionRange }</td>
 					}
 				</tr>
 				<tr class="hover:bg-gray-700 hover:text-gray-100">
 					<td class="border border-gray-500 text-left px-1 sticky left-0 bg-gray-700">DIRCM detection range: [km]</td>
 					for _, weapon := range weapons {
 						<td class="border border-gray-500 px-2">{ weapon.DIRCMDetectionRange }</td>
+					}
+				</tr>
+				<tr class="hover:bg-gray-700 hover:text-gray-100">
+					<td class="border border-gray-500 text-left px-1 sticky left-0 bg-gray-700">IRCCM:</td>
+					for _, weapon := range weapons {
+						<td class="border border-gray-500 px-2">{ weapon.IRCCM }</td>
+					}
+				</tr>
+				<tr class="hover:bg-gray-700 hover:text-gray-100">
+					<td class="border border-gray-500 text-left px-1 sticky left-0 bg-gray-700">IRCCM type:</td>
+					for _, weapon := range weapons {
+						<td class="border border-gray-500 px-2">{ weapon.IRCCMType }</td>
+					}
+				</tr>
+				<tr class="hover:bg-gray-700 hover:text-gray-100">
+					<td class="border border-gray-500 text-left px-1 sticky left-0 bg-gray-700">IRCCM field of view: [degrees]</td>
+					for _, weapon := range weapons {
+						<td class="border border-gray-500 px-2">{ weapon.IRCCMFieldOfView }</td>
 					}
 				</tr>
 				<tr class="hover:bg-gray-700 hover:text-gray-100">
@@ -324,24 +354,6 @@ templ RearAspect(weapons []*models.Params) {
 					<td class="border border-gray-500 text-left px-1 sticky left-0 bg-gray-700">Maximum speed: [m/s]</td>
 					for _, weapon := range weapons {
 						<td class="border border-gray-500 px-2">{ weapon.MaximumSpeed }</td>
-					}
-				</tr>
-				<tr class="hover:bg-gray-700 hover:text-gray-100">
-					<td class="border border-gray-500 text-left px-1 sticky left-0 bg-gray-700">Flight time until guidance starts (delay): [s]</td>
-					for _, weapon := range weapons {
-						<td class="border border-gray-500 px-2">{ weapon.FlightTimeUntilGuidanceStarts }</td>
-					}
-				</tr>
-				<tr class="hover:bg-gray-700 hover:text-gray-100">
-					<td class="border border-gray-500 text-left px-1 sticky left-0 bg-gray-700">Flight time when pull limit reaches 40%: [s]</td>
-					for _, weapon := range weapons {
-						<td class="border border-gray-500 px-2">{ weapon.FlightTimeWhenPullLimit40 }</td>
-					}
-				</tr>
-				<tr class="hover:bg-gray-700 hover:text-gray-100">
-					<td class="border border-gray-500 text-left px-1 sticky left-0 bg-gray-700">Flight time when pull limit reaches 100%: [s]</td>
-					for _, weapon := range weapons {
-						<td class="border border-gray-500 px-2">{ weapon.FlightTimeWhenPullLimit100 }</td>
 					}
 				</tr>
 				<tr class="hover:bg-gray-700 hover:text-gray-100">

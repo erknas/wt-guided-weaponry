@@ -78,11 +78,13 @@ type GuidanceProp struct {
 	IRCCMRejectionThreshold                       string `json:"IRCCMRejectionThreshold,omitempty"`
 	IRCCMReactionTime                             string `json:"IRCCMReactionTime,omitempty"`
 	LockOnRangeFromAllAspect                      string `json:"lockOnRangeFromAllAspect,omitempty"`
+	CountermeasureDetectionRange                  string `json:"countermeasureDetectionRange,omitempty"`
 	MaximumBreakLockTime                          string `json:"maximumBreakLockTime,omitempty"`
 	CanBeSlavedToRadar                            string `json:"canBeSlavedToRadar,omitempty"`
 	CanLockAfterLaunch                            string `json:"canLockAfterLaunch,omitempty"`
 	Band                                          string `json:"band,omitempty"`
 	AngularSpeedRejectionThreshold                string `json:"angularSpeedRejectionThreshold,omitempty"`
+	AngularRejectionThresholdRange                string `json:"angularRejectionThresholdRange,omitempty"`
 	AccelerationRejectionThresholdRange           string `json:"accelerationRejectionThresholdRange,omitempty"`
 	SidelobeAttenuation                           string `json:"sidelobeAttenuation,omitempty"`
 	TransmitterPower                              string `json:"transmitterPower,omitempty"`
@@ -95,6 +97,9 @@ type GuidanceProp struct {
 	DistanceWidth                                 string `json:"distanceWidth,omitempty"`
 	DistanceMinimumSignalGate                     string `json:"distanceMinimumSignalGate,omitempty"`
 	DistanceRefWidth                              string `json:"distanceRefWidth,omitempty"`
+	DistanceGateSearchRange                       string `json:"distanceGateSearchRange,omitempty"`
+	DistanceGateAlphaFilter                       string `json:"distanceGateAlphaFilter,omitempty"`
+	DistanceGateBetaFilter                        string `json:"distanceGateBetaFilter,omitempty"`
 	DopplerSpeedMinimumValue                      string `json:"dopplerSpeedMinimumValue,omitempty"`
 	DopplerSpeedMaximumValue                      string `json:"dopplerSpeedMaximumValue,omitempty"`
 	DopplerSpeedWidth                             string `json:"dopplerSpeedWidth,omitempty"`
@@ -111,6 +116,7 @@ type GuidanceProp struct {
 	PIDDerivativeTerm                             string `json:"PIDDerivativeTerm,omitempty"`
 	InertialGuidanceDriftSpeed                    string `json:"inertialGuidanceDriftSpeed,omitempty"`
 	InertialNavigation                            string `json:"inertialNavigation,omitempty"`
+	DistanceGate                                  string `json:"distanceGate,omitempty"`
 	InertialNavigationDriftSpeed                  string `json:"inertialNavigationDriftSpeed,omitempty"`
 }
 
@@ -142,11 +148,13 @@ type FlightProp struct {
 	MaximumTargetAngularChange                         string `json:"maximumTargetAngularChange"`
 	ThrustVectoring                                    string `json:"thrustVectoring,omitempty"`
 	ThrustVectoringAngle                               string `json:"thrustVectoringAngle,omitempty"`
+	StartingGLimit                                     string `json:"startingGLimit,omitempty"`
 	ETAToImpactWhenPropMultiplierReachesXPercentage30  string `json:"ETAToImpactWhenPropMultiplierReachesXPercentage30%,omitempty"`
 	ETAToImpactWhenPropMultiplierReachesXPercentage50  string `json:"ETAToImpactWhenPropMultiplierReachesXPercentage50%,omitempty"`
 	ETAToImpactWhenPropMultiplierReachesXPercentage80  string `json:"ETAToImpactWhenPropMultiplierReachesXPercentage80%,omitempty"`
 	ETAToImpactWhenPropMultiplierReachesXPercentage90  string `json:"ETAToImpactWhenPropMultiplierReachesXPercentage90%,omitempty"`
 	ETAToImpactWhenPropMultiplierReachesXPercentage100 string `json:"ETAToImpactWhenPropMultiplierReachesXPercentage100%,omitempty"`
+	ETAToImpactWhenPropMultiplierReachesXPercentageX   string `json:"ETAToImpactWhenPropMultiplierReachesXPercentageX%,omitempty"`
 }
 
 type Params struct {
@@ -227,11 +235,13 @@ func NewWeapon(params *Params) *Params {
 			IRCCMRejectionThreshold:             params.IRCCMRejectionThreshold,
 			IRCCMReactionTime:                   params.IRCCMReactionTime,
 			LockOnRangeFromAllAspect:            params.LockOnRangeFromAllAspect,
+			CountermeasureDetectionRange:        params.CountermeasureDetectionRange,
 			MaximumBreakLockTime:                params.MaximumBreakLockTime,
 			CanBeSlavedToRadar:                  params.CanBeSlavedToRadar,
 			CanLockAfterLaunch:                  params.CanLockAfterLaunch,
 			Band:                                params.Band,
 			AngularSpeedRejectionThreshold:      params.AngularSpeedRejectionThreshold,
+			AngularRejectionThresholdRange:      params.AngularRejectionThresholdRange,
 			AccelerationRejectionThresholdRange: params.AccelerationRejectionThresholdRange,
 			SidelobeAttenuation:                 params.SidelobeAttenuation,
 			TransmitterPower:                    params.TransmitterPower,
@@ -241,6 +251,9 @@ func NewWeapon(params *Params) *Params {
 			ReceiverSidelobeSensitivity:         params.ReceiverSidelobeSensitivity,
 			DistanceMinimumValue:                params.DistanceMinimumValue,
 			DistanceMaximumValue:                params.DistanceMaximumValue,
+			DistanceGateSearchRange:             params.DistanceGateSearchRange,
+			DistanceGateAlphaFilter:             params.DistanceGateAlphaFilter,
+			DistanceGateBetaFilter:              params.DistanceGateBetaFilter,
 			DistanceWidth:                       params.DistanceWidth,
 			DistanceMinimumSignalGate:           params.DistanceMinimumSignalGate,
 			DistanceRefWidth:                    params.DistanceRefWidth,
@@ -248,6 +261,7 @@ func NewWeapon(params *Params) *Params {
 			DopplerSpeedMaximumValue:            params.DopplerSpeedMaximumValue,
 			DopplerSpeedWidth:                   params.DopplerSpeedWidth,
 			DopplerSpeedRefWidth:                params.DopplerSpeedRefWidth,
+			DistanceGate:                        params.DistanceGate,
 			DopplerSpeedMinimumSignalGate:       params.DopplerSpeedMinimumSignalGate,
 			DopplerSpeedGateSearchRange:         params.DopplerSpeedGateSearchRange,
 			DopplerSpeedGateAlphaFilter:         params.DopplerSpeedGateAlphaFilter,
@@ -290,11 +304,13 @@ func NewWeapon(params *Params) *Params {
 			MaximumTargetAngularChange:           params.MaximumTargetAngularChange,
 			ThrustVectoring:                      params.ThrustVectoring,
 			ThrustVectoringAngle:                 params.ThrustVectoringAngle,
+			StartingGLimit:                       params.StartingGLimit,
 			ETAToImpactWhenPropMultiplierReachesXPercentage30:  params.ETAToImpactWhenPropMultiplierReachesXPercentage30,
 			ETAToImpactWhenPropMultiplierReachesXPercentage50:  params.ETAToImpactWhenPropMultiplierReachesXPercentage50,
 			ETAToImpactWhenPropMultiplierReachesXPercentage80:  params.ETAToImpactWhenPropMultiplierReachesXPercentage80,
 			ETAToImpactWhenPropMultiplierReachesXPercentage90:  params.ETAToImpactWhenPropMultiplierReachesXPercentage90,
 			ETAToImpactWhenPropMultiplierReachesXPercentage100: params.ETAToImpactWhenPropMultiplierReachesXPercentage100,
+			ETAToImpactWhenPropMultiplierReachesXPercentageX:   params.ETAToImpactWhenPropMultiplierReachesXPercentageX,
 		},
 	}
 }
@@ -367,11 +383,13 @@ func UpdateWeaponParams(params *Params) bson.M {
 			IRCCMRejectionThreshold:             params.IRCCMRejectionThreshold,
 			IRCCMReactionTime:                   params.IRCCMReactionTime,
 			LockOnRangeFromAllAspect:            params.LockOnRangeFromAllAspect,
+			CountermeasureDetectionRange:        params.CountermeasureDetectionRange,
 			MaximumBreakLockTime:                params.MaximumBreakLockTime,
 			CanBeSlavedToRadar:                  params.CanBeSlavedToRadar,
 			CanLockAfterLaunch:                  params.CanLockAfterLaunch,
 			Band:                                params.Band,
 			AngularSpeedRejectionThreshold:      params.AngularSpeedRejectionThreshold,
+			AngularRejectionThresholdRange:      params.AngularRejectionThresholdRange,
 			AccelerationRejectionThresholdRange: params.AccelerationRejectionThresholdRange,
 			SidelobeAttenuation:                 params.SidelobeAttenuation,
 			TransmitterPower:                    params.TransmitterPower,
@@ -383,12 +401,16 @@ func UpdateWeaponParams(params *Params) bson.M {
 			DistanceMaximumValue:                params.DistanceMaximumValue,
 			DistanceWidth:                       params.DistanceWidth,
 			DistanceMinimumSignalGate:           params.DistanceMinimumSignalGate,
+			DistanceGateSearchRange:             params.DistanceGateSearchRange,
+			DistanceGateAlphaFilter:             params.DistanceGateAlphaFilter,
+			DistanceGateBetaFilter:              params.DistanceGateBetaFilter,
 			DistanceRefWidth:                    params.DistanceRefWidth,
 			DopplerSpeedMinimumValue:            params.DopplerSpeedMinimumValue,
 			DopplerSpeedMaximumValue:            params.DopplerSpeedMaximumValue,
 			DopplerSpeedWidth:                   params.DopplerSpeedWidth,
 			DopplerSpeedRefWidth:                params.DopplerSpeedRefWidth,
 			DopplerSpeedMinimumSignalGate:       params.DopplerSpeedMinimumSignalGate,
+			DistanceGate:                        params.DistanceGate,
 			DopplerSpeedGateSearchRange:         params.DopplerSpeedGateSearchRange,
 			DopplerSpeedGateAlphaFilter:         params.DopplerSpeedGateAlphaFilter,
 			DopplerSpeedGateBetaFilter:          params.DopplerSpeedGateBetaFilter,
@@ -430,11 +452,13 @@ func UpdateWeaponParams(params *Params) bson.M {
 			MaximumTargetAngularChange:           params.MaximumTargetAngularChange,
 			ThrustVectoring:                      params.ThrustVectoring,
 			ThrustVectoringAngle:                 params.ThrustVectoringAngle,
+			StartingGLimit:                       params.StartingGLimit,
 			ETAToImpactWhenPropMultiplierReachesXPercentage30:  params.ETAToImpactWhenPropMultiplierReachesXPercentage30,
 			ETAToImpactWhenPropMultiplierReachesXPercentage50:  params.ETAToImpactWhenPropMultiplierReachesXPercentage50,
 			ETAToImpactWhenPropMultiplierReachesXPercentage80:  params.ETAToImpactWhenPropMultiplierReachesXPercentage80,
 			ETAToImpactWhenPropMultiplierReachesXPercentage90:  params.ETAToImpactWhenPropMultiplierReachesXPercentage90,
 			ETAToImpactWhenPropMultiplierReachesXPercentage100: params.ETAToImpactWhenPropMultiplierReachesXPercentage100,
+			ETAToImpactWhenPropMultiplierReachesXPercentageX:   params.ETAToImpactWhenPropMultiplierReachesXPercentageX,
 		},
 	}
 }

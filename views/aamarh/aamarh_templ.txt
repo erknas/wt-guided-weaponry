@@ -83,9 +83,6 @@
 </tr><tr class=\"hover:bg-gray-700 hover:text-gray-100\"><td class=\"border border-gray-500 text-left px-1 sticky left-0 bg-gray-700\">Seeker search duration: [s]</td>
 <td class=\"border border-gray-500 px-2\">
 </td>
-</tr><tr class=\"hover:bg-gray-700 hover:text-gray-100\"><td class=\"border border-gray-500 text-left px-1 sticky left-0 bg-gray-700\">Field of view: [degrees]</td>
-<td class=\"border border-gray-500 px-2\">
-</td>
 </tr><tr class=\"hover:bg-gray-700 hover:text-gray-100\"><td class=\"border border-gray-500 text-left px-1 sticky left-0 bg-gray-700\">Gimbal limit: [degrees]</td>
 <td class=\"border border-gray-500 px-2\">
 </td>
@@ -98,25 +95,88 @@
 </tr><tr class=\"hover:bg-gray-700 hover:text-gray-100\"><td class=\"border border-gray-500 text-left px-1 sticky left-0 bg-gray-700\">Maximum lock angle before launch: [degrees]</td>
 <td class=\"border border-gray-500 px-2\">
 </td>
-</tr><tr class=\"hover:bg-gray-700 hover:text-gray-100\"><td class=\"border border-gray-500 text-left px-1 sticky left-0 bg-gray-700\">Minimum angle of incidence of the seeker to the Sun for it to not capture the Sun: [degrees]</td>
-<td class=\"border border-gray-500 px-2\">
-</td>
-</tr><tr class=\"hover:bg-gray-700 hover:text-gray-100\"><td class=\"border border-gray-500 text-left px-1 sticky left-0 bg-gray-700\">Lock-on range from rear-aspect: [km]</td>
-<td class=\"border border-gray-500 px-2\">
-</td>
-</tr><tr class=\"hover:bg-gray-700 hover:text-gray-100\"><td class=\"border border-gray-500 text-left px-1 sticky left-0 bg-gray-700\">Flare and IRCM detection range: [km]</td>
-<td class=\"border border-gray-500 px-2\">
-</td>
-</tr><tr class=\"hover:bg-gray-700 hover:text-gray-100\"><td class=\"border border-gray-500 text-left px-1 sticky left-0 bg-gray-700\">DIRCM detection range: [km]</td>
-<td class=\"border border-gray-500 px-2\">
-</td>
-</tr><tr class=\"hover:bg-gray-700 hover:text-gray-100\"><td class=\"border border-gray-500 text-left px-1 sticky left-0 bg-gray-700\">Head-on lock-on range against afterburning target: [km]</td>
+</tr><tr class=\"hover:bg-gray-700 hover:text-gray-100\"><td class=\"border border-gray-500 text-left px-1 sticky left-0 bg-gray-700\">Lock-on range from all-aspect: [km]</td>
 <td class=\"border border-gray-500 px-2\">
 </td>
 </tr><tr class=\"hover:bg-gray-700 hover:text-gray-100\"><td class=\"border border-gray-500 text-left px-1 sticky left-0 bg-gray-700\">Maximum break lock time: [s]</td>
 <td class=\"border border-gray-500 px-2\">
 </td>
-</tr><tr class=\"hover:bg-gray-700 hover:text-gray-100\"><td class=\"border border-gray-500 text-left px-1 sticky left-0 bg-gray-700\">Can be slaved to radar:</td>
+</tr><tr class=\"hover:bg-gray-700 hover:text-gray-100\"><td class=\"border border-gray-500 text-left px-1 sticky left-0 bg-gray-700\">Can lock after launch:</td>
+<td class=\"border border-gray-500 px-2\">
+</td>
+</tr><tr class=\"hover:bg-gray-700 hover:text-gray-100\"><td class=\"border border-gray-500 text-left px-1 sticky left-0 bg-gray-700\">Band:</td>
+<td class=\"border border-gray-500 px-2\">
+</td>
+</tr><tr class=\"hover:bg-gray-700 hover:text-gray-100\"><td class=\"border border-gray-500 text-left px-1 sticky left-0 bg-gray-700\">Angular speed rejection threshold: [degrees/second]</td>
+<td class=\"border border-gray-500 px-2\">
+</td>
+</tr><tr class=\"hover:bg-gray-700 hover:text-gray-100\"><td class=\"border border-gray-500 text-left px-1 sticky left-0 bg-gray-700\">Acceleration rejection threshold range: [m/s^2]</td>
+<td class=\"border border-gray-500 px-2\">
+</td>
+</tr><tr class=\"hover:bg-gray-700 hover:text-gray-100\"><td class=\"border border-gray-500 text-left px-1 sticky left-0 bg-gray-700\">Sidelobe attenuation:</td>
+<td class=\"border border-gray-500 px-2\">
+</td>
+</tr><tr class=\"hover:bg-gray-700 hover:text-gray-100\"><td class=\"border border-gray-500 text-left px-1 sticky left-0 bg-gray-700\">Transmitter power:</td>
+<td class=\"border border-gray-500 px-2\">
+</td>
+</tr><tr class=\"hover:bg-gray-700 hover:text-gray-100\"><td class=\"border border-gray-500 text-left px-1 sticky left-0 bg-gray-700\">Transmitter angle of half sensitivity:</td>
+<td class=\"border border-gray-500 px-2\">
+</td>
+</tr><tr class=\"hover:bg-gray-700 hover:text-gray-100\"><td class=\"border border-gray-500 text-left px-1 sticky left-0 bg-gray-700\">Transmitter sidelobe sensitivity:</td>
+<td class=\"border border-gray-500 px-2\">
+</td>
+</tr><tr class=\"hover:bg-gray-700 hover:text-gray-100\"><td class=\"border border-gray-500 text-left px-1 sticky left-0 bg-gray-700\">Receiver angle of half sensitivity:</td>
+<td class=\"border border-gray-500 px-2\">
+</td>
+</tr><tr class=\"hover:bg-gray-700 hover:text-gray-100\"><td class=\"border border-gray-500 text-left px-1 sticky left-0 bg-gray-700\">Receiver sidelobe sensitivity:</td>
+<td class=\"border border-gray-500 px-2\">
+</td>
+</tr><tr class=\"hover:bg-gray-700 hover:text-gray-100\"><td class=\"border border-gray-500 text-left px-1 sticky left-0 bg-gray-700\">Distance minimum value:</td>
+<td class=\"border border-gray-500 px-2\">
+</td>
+</tr><tr class=\"hover:bg-gray-700 hover:text-gray-100\"><td class=\"border border-gray-500 text-left px-1 sticky left-0 bg-gray-700\">Distance maximum value:</td>
+<td class=\"border border-gray-500 px-2\">
+</td>
+</tr><tr class=\"hover:bg-gray-700 hover:text-gray-100\"><td class=\"border border-gray-500 text-left px-1 sticky left-0 bg-gray-700\">Distance width:</td>
+<td class=\"border border-gray-500 px-2\">
+</td>
+</tr><tr class=\"hover:bg-gray-700 hover:text-gray-100\"><td class=\"border border-gray-500 text-left px-1 sticky left-0 bg-gray-700\">Distance minimum signal gate:</td>
+<td class=\"border border-gray-500 px-2\">
+</td>
+</tr><tr class=\"hover:bg-gray-700 hover:text-gray-100\"><td class=\"border border-gray-500 text-left px-1 sticky left-0 bg-gray-700\">Distance ref width: [m]</td>
+<td class=\"border border-gray-500 px-2\">
+</td>
+</tr><tr class=\"hover:bg-gray-700 hover:text-gray-100\"><td class=\"border border-gray-500 text-left px-1 sticky left-0 bg-gray-700\">Distance gate search range: [m]</td>
+<td class=\"border border-gray-500 px-2\">
+</td>
+</tr><tr class=\"hover:bg-gray-700 hover:text-gray-100\"><td class=\"border border-gray-500 text-left px-1 sticky left-0 bg-gray-700\">Distance gate alpha filter:</td>
+<td class=\"border border-gray-500 px-2\">
+</td>
+</tr><tr class=\"hover:bg-gray-700 hover:text-gray-100\"><td class=\"border border-gray-500 text-left px-1 sticky left-0 bg-gray-700\">Distance gate beta filter:</td>
+<td class=\"border border-gray-500 px-2\">
+</td>
+</tr><tr class=\"hover:bg-gray-700 hover:text-gray-100\"><td class=\"border border-gray-500 text-left px-1 sticky left-0 bg-gray-700\">Doppler speed minimum value: [m/s]</td>
+<td class=\"border border-gray-500 px-2\">
+</td>
+</tr><tr class=\"hover:bg-gray-700 hover:text-gray-100\"><td class=\"border border-gray-500 text-left px-1 sticky left-0 bg-gray-700\">Doppler speed maximum value: [m/s]</td>
+<td class=\"border border-gray-500 px-2\">
+</td>
+</tr><tr class=\"hover:bg-gray-700 hover:text-gray-100\"><td class=\"border border-gray-500 text-left px-1 sticky left-0 bg-gray-700\">Doppler speed width: [m/s]</td>
+<td class=\"border border-gray-500 px-2\">
+</td>
+</tr><tr class=\"hover:bg-gray-700 hover:text-gray-100\"><td class=\"border border-gray-500 text-left px-1 sticky left-0 bg-gray-700\">Doppler speed ref width: [m/s]</td>
+<td class=\"border border-gray-500 px-2\">
+</td>
+</tr><tr class=\"hover:bg-gray-700 hover:text-gray-100\"><td class=\"border border-gray-500 text-left px-1 sticky left-0 bg-gray-700\">Doppler speed minimum signal gate: [m/s]</td>
+<td class=\"border border-gray-500 px-2\">
+</td>
+</tr><tr class=\"hover:bg-gray-700 hover:text-gray-100\"><td class=\"border border-gray-500 text-left px-1 sticky left-0 bg-gray-700\">Doppler speed gate search range: [m/s]</td>
+<td class=\"border border-gray-500 px-2\">
+</td>
+</tr><tr class=\"hover:bg-gray-700 hover:text-gray-100\"><td class=\"border border-gray-500 text-left px-1 sticky left-0 bg-gray-700\">Doppler speed gate alpha filter:</td>
+<td class=\"border border-gray-500 px-2\">
+</td>
+</tr><tr class=\"hover:bg-gray-700 hover:text-gray-100\"><td class=\"border border-gray-500 text-left px-1 sticky left-0 bg-gray-700\">Doppler speed gate beta filter:</td>
 <td class=\"border border-gray-500 px-2\">
 </td>
 </tr><tr class=\"hover:bg-gray-700 hover:text-gray-100\"><td class=\"border border-gray-500 text-left px-1 sticky left-0 bg-gray-700\">Proportional navigation multiplier: (affects how far ahead it attempts to lead)</td>
@@ -137,6 +197,9 @@
 </tr><tr class=\"hover:bg-gray-700 hover:text-gray-100\"><td class=\"border border-gray-500 text-left px-1 sticky left-0 bg-gray-700\">PID derivative term:</td>
 <td class=\"border border-gray-500 px-2\">
 </td>
+</tr><tr class=\"hover:bg-gray-700 hover:text-gray-100\"><td class=\"border border-gray-500 text-left px-1 sticky left-0 bg-gray-700\">Inertial guidance drift speed:</td>
+<td class=\"border border-gray-500 px-2\">
+</td>
 </tr><th class=\"py-1 text-xl text-black text-left bg-blue-400 border border-gray-500\" colspan=\"
 \"><span class=\"sticky left-0\">Flight props</span></th><tr class=\"hover:bg-gray-700 hover:text-gray-100\"><td class=\"border border-gray-500 text-left px-1 sticky left-0 bg-gray-700\">Maximum fin angle of attack: [degrees]</td>
 <td class=\"border border-gray-500  px-2\">
@@ -153,15 +216,6 @@
 </tr><tr class=\"hover:bg-gray-700 hover:text-gray-100\"><td class=\"border border-gray-500 text-left px-1 sticky left-0 bg-gray-700\">Maximum speed: [m/s]</td>
 <td class=\"border border-gray-500 px-2\">
 </td>
-</tr><tr class=\"hover:bg-gray-700 hover:text-gray-100\"><td class=\"border border-gray-500 text-left px-1 sticky left-0 bg-gray-700\">Flight time until guidance starts (delay): [s]</td>
-<td class=\"border border-gray-500 px-2\">
-</td>
-</tr><tr class=\"hover:bg-gray-700 hover:text-gray-100\"><td class=\"border border-gray-500 text-left px-1 sticky left-0 bg-gray-700\">Flight time when pull limit reaches 40%: [s]</td>
-<td class=\"border border-gray-500 px-2\">
-</td>
-</tr><tr class=\"hover:bg-gray-700 hover:text-gray-100\"><td class=\"border border-gray-500 text-left px-1 sticky left-0 bg-gray-700\">Flight time when pull limit reaches 100%: [s]</td>
-<td class=\"border border-gray-500 px-2\">
-</td>
 </tr><tr class=\"hover:bg-gray-700 hover:text-gray-100\"><td class=\"border border-gray-500 text-left px-1 sticky left-0 bg-gray-700\">Minimum range: [m]</td>
 <td class=\"border border-gray-500 px-2\">
 </td>
@@ -171,10 +225,46 @@
 </tr><tr class=\"hover:bg-gray-700 hover:text-gray-100\"><td class=\"border border-gray-500 text-left px-1 sticky left-0 bg-gray-700\">Maximum G-load: [G]</td>
 <td class=\"border border-gray-500 px-2\">
 </td>
+</tr><tr class=\"hover:bg-gray-700 hover:text-gray-100\"><td class=\"border border-gray-500 text-left px-1 sticky left-0 bg-gray-700\">Flight time until guidance starts (delay): [s]</td>
+<td class=\"border border-gray-500 px-2\">
+</td>
+</tr><tr class=\"hover:bg-gray-700 hover:text-gray-100\"><td class=\"border border-gray-500 text-left px-1 sticky left-0 bg-gray-700\">Flight time when pull limit reaches 40%: [s]</td>
+<td class=\"border border-gray-500 px-2\">
+</td>
+</tr><tr class=\"hover:bg-gray-700 hover:text-gray-100\"><td class=\"border border-gray-500 text-left px-1 sticky left-0 bg-gray-700\">Flight time when pull limit reaches 100%: [s]</td>
+<td class=\"border border-gray-500 px-2\">
+</td>
+</tr><tr class=\"hover:bg-gray-700 hover:text-gray-100\"><td class=\"border border-gray-500 text-left px-1 sticky left-0 bg-gray-700\">Loft:</td>
+<td class=\"border border-gray-500 px-2\">
+</td>
+</tr><tr class=\"hover:bg-gray-700 hover:text-gray-100\"><td class=\"border border-gray-500 text-left px-1 sticky left-0 bg-gray-700\">Loft angle: [degrees]</td>
+<td class=\"border border-gray-500 px-2\">
+</td>
+</tr><tr class=\"hover:bg-gray-700 hover:text-gray-100\"><td class=\"border border-gray-500 text-left px-1 sticky left-0 bg-gray-700\">Target elevation: [degrees]</td>
+<td class=\"border border-gray-500 px-2\">
+</td>
+</tr><tr class=\"hover:bg-gray-700 hover:text-gray-100\"><td class=\"border border-gray-500 text-left px-1 sticky left-0 bg-gray-700\">Maximum target angular change: [degrees/s]</td>
+<td class=\"border border-gray-500 px-2\">
+</td>
 </tr><tr class=\"hover:bg-gray-700 hover:text-gray-100\"><td class=\"border border-gray-500 text-left px-1 sticky left-0 bg-gray-700\">Thrust vectoring:</td>
 <td class=\"border border-gray-500 px-2\">
 </td>
 </tr><tr class=\"hover:bg-gray-700 hover:text-gray-100\"><td class=\"border border-gray-500 text-left px-1 sticky left-0 bg-gray-700\">Thrust vectoring angle: [degrees]</td>
+<td class=\"border border-gray-500 px-2\">
+</td>
+</tr><tr class=\"hover:bg-gray-700 hover:text-gray-100\"><td class=\"border border-gray-500 text-left px-1 sticky left-0 bg-gray-700\">ETA to impact when prop multiplier reaches x%: [s/%]</td>
+<td class=\"border border-gray-500 px-2\">
+</td>
+</tr><tr class=\"hover:bg-gray-700 hover:text-gray-100\"><td class=\"border border-gray-500 text-left px-1 sticky left-0 bg-gray-700\">ETA to impact when prop multiplier reaches x%: [s/%]</td>
+<td class=\"border border-gray-500 px-2\">
+</td>
+</tr><tr class=\"hover:bg-gray-700 hover:text-gray-100\"><td class=\"border border-gray-500 text-left px-1 sticky left-0 bg-gray-700\">ETA to impact when prop multiplier reaches x%: [s/%]</td>
+<td class=\"border border-gray-500 px-2\">
+</td>
+</tr><tr class=\"hover:bg-gray-700 hover:text-gray-100\"><td class=\"border border-gray-500 text-left px-1 sticky left-0 bg-gray-700\">ETA to impact when prop multiplier reaches x%: [s/%]</td>
+<td class=\"border border-gray-500 px-2\">
+</td>
+</tr><tr class=\"hover:bg-gray-700 hover:text-gray-100\"><td class=\"border border-gray-500 text-left px-1 sticky left-0 bg-gray-700\">ETA to impact when prop multiplier reaches x%: [s/%]</td>
 <td class=\"border border-gray-500 px-2\">
 </td>
 </tr></tbody></table></div>

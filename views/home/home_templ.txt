@@ -1,2 +1,2 @@
  
- <div id=\"search-result\"></div><table id=\"params\"></table>
+ <div id=\"search-result\"></div><div><table id=\"params\"></table></div>

@@ -1,11 +1,11 @@
-package rearaspect
+package ashm
 
 import (
 	"fmt"
 	"github.com/zeze322/wt-guided-weaponry/models"
 )
 
-templ RearAspect(weapons []*models.Params) {
+templ Ashm(weapons []*models.Params) {
 	<div class="mt-5 h-[890px] w-[1530px] overflow-y-auto ml-96 container">
 		<table class="border-separate">
 			<thead class="sticky top-0 z-40 font-bold text-lg">
@@ -129,27 +129,15 @@ templ RearAspect(weapons []*models.Params) {
 					}
 				</tr>
 				<tr class="hover:bg-gray-700 hover:text-gray-100">
-					<td class="border border-gray-500 text-left px-1 sticky left-0 bg-gray-700">Proximity fuse:</td>
+					<td class="border border-gray-500 text-left px-1 sticky left-0 bg-gray-700">Tandem charge:</td>
 					for _, weapon := range weapons {
-						<td class="border border-gray-500 px-2">{ weapon.ProximityFuse }</td>
+						<td class="border border-gray-500 px-2">{ weapon.TandemCharge }</td>
 					}
 				</tr>
 				<tr class="hover:bg-gray-700 hover:text-gray-100">
-					<td class="border border-gray-500 text-left px-1 sticky left-0 bg-gray-700">Proximity fuse range: [m]</td>
+					<td class="border border-gray-500 text-left px-1 sticky left-0 bg-gray-700">Penetration: [mm]</td>
 					for _, weapon := range weapons {
-						<td class="border border-gray-500 px-2">{ weapon.ProximityFuseRange }</td>
-					}
-				</tr>
-				<tr class="hover:bg-gray-700 hover:text-gray-100">
-					<td class="border border-gray-500 text-left px-1 sticky left-0 bg-gray-700">Proximity fuse shell detection (80-200 mm):</td>
-					for _, weapon := range weapons {
-						<td class="border border-gray-500 px-2">{ weapon.ProximityFuseShellDetection }</td>
-					}
-				</tr>
-				<tr class="hover:bg-gray-700 hover:text-gray-100">
-					<td class="border border-gray-500 text-left px-1 sticky left-0 bg-gray-700">Proximity fuse delay: [s]</td>
-					for _, weapon := range weapons {
-						<td class="border border-gray-500 px-2">{ weapon.ProximityFuseDelay }</td>
+						<td class="border border-gray-500 px-2">{ weapon.Penetration }</td>
 					}
 				</tr>
 				<th class="py-1 text-xl text-black text-left bg-violet-400 border border-gray-500" colspan={ fmt.Sprintf("%d", len(weapons)+2) }>
@@ -174,6 +162,12 @@ templ RearAspect(weapons []*models.Params) {
 					}
 				</tr>
 				<tr class="hover:bg-gray-700 hover:text-gray-100">
+					<td class="border border-gray-500 text-left px-1 sticky left-0 bg-gray-700">Guidance range: [km]</td>
+					for _, weapon := range weapons {
+						<td class="border border-gray-500 px-2">{ weapon.GuidanceRange }</td>
+					}
+				</tr>
+				<tr class="hover:bg-gray-700 hover:text-gray-100">
 					<td class="border border-gray-500 text-left px-1 sticky left-0 bg-gray-700">Seeker warm up time: [s]</td>
 					for _, weapon := range weapons {
 						<td class="border border-gray-500 px-2">{ weapon.SeekerWarmUpTime }</td>
@@ -183,12 +177,6 @@ templ RearAspect(weapons []*models.Params) {
 					<td class="border border-gray-500 text-left px-1 sticky left-0 bg-gray-700">Seeker search duration: [s]</td>
 					for _, weapon := range weapons {
 						<td class="border border-gray-500 px-2">{ weapon.SeekerSearchDuration }</td>
-					}
-				</tr>
-				<tr class="hover:bg-gray-700 hover:text-gray-100">
-					<td class="border border-gray-500 text-left px-1 sticky left-0 bg-gray-700">Field of view: [degrees]</td>
-					for _, weapon := range weapons {
-						<td class="border border-gray-500 px-2">{ weapon.FieldOfView }</td>
 					}
 				</tr>
 				<tr class="hover:bg-gray-700 hover:text-gray-100">
@@ -216,33 +204,9 @@ templ RearAspect(weapons []*models.Params) {
 					}
 				</tr>
 				<tr class="hover:bg-gray-700 hover:text-gray-100">
-					<td class="border border-gray-500 text-left px-1 sticky left-0 bg-gray-700">Minimum angle of incidence of the seeker to the Sun for it to not capture the Sun: [degrees]</td>
+					<td class="border border-gray-500 text-left px-1 sticky left-0 bg-gray-700">Lock-on range from all-aspect: [km]</td>
 					for _, weapon := range weapons {
-						<td class="border border-gray-500 px-2">{ weapon.MinimumAngleBetweenSeekerAndSunForNotCapture }</td>
-					}
-				</tr>
-				<tr class="hover:bg-gray-700 hover:text-gray-100">
-					<td class="border border-gray-500 text-left px-1 sticky left-0 bg-gray-700">Lock-on range from rear-aspect: [km]</td>
-					for _, weapon := range weapons {
-						<td class="border border-gray-500 px-2">{ weapon.LockOnRangeFromRearAspect }</td>
-					}
-				</tr>
-				<tr class="hover:bg-gray-700 hover:text-gray-100">
-					<td class="border border-gray-500 text-left px-1 sticky left-0 bg-gray-700">Flare and IRCM detection range: [km]</td>
-					for _, weapon := range weapons {
-						<td class="border border-gray-500 px-2">{ weapon.FlareDetectionRange }</td>
-					}
-				</tr>
-				<tr class="hover:bg-gray-700 hover:text-gray-100">
-					<td class="border border-gray-500 text-left px-1 sticky left-0 bg-gray-700">DIRCM detection range: [km]</td>
-					for _, weapon := range weapons {
-						<td class="border border-gray-500 px-2">{ weapon.DIRCMDetectionRange }</td>
-					}
-				</tr>
-				<tr class="hover:bg-gray-700 hover:text-gray-100">
-					<td class="border border-gray-500 text-left px-1 sticky left-0 bg-gray-700">Head-on lock-on range against afterburning target: [km]</td>
-					for _, weapon := range weapons {
-						<td class="border border-gray-500 px-2">{ weapon.HeadOnLockOnRangeAgainstAfterburnerTarget }</td>
+						<td class="border border-gray-500 px-2">{ weapon.LockOnRangeFromAllAspect }</td>
 					}
 				</tr>
 				<tr class="hover:bg-gray-700 hover:text-gray-100">
@@ -252,9 +216,81 @@ templ RearAspect(weapons []*models.Params) {
 					}
 				</tr>
 				<tr class="hover:bg-gray-700 hover:text-gray-100">
-					<td class="border border-gray-500 text-left px-1 sticky left-0 bg-gray-700">Can be slaved to radar:</td>
+					<td class="border border-gray-500 text-left px-1 sticky left-0 bg-gray-700">Can lock after launch:</td>
 					for _, weapon := range weapons {
-						<td class="border border-gray-500 px-2">{ weapon.CanBeSlavedToRadar }</td>
+						<td class="border border-gray-500 px-2">{ weapon.CanLockAfterLaunch }</td>
+					}
+				</tr>
+				<tr class="hover:bg-gray-700 hover:text-gray-100">
+					<td class="border border-gray-500 text-left px-1 sticky left-0 bg-gray-700">Band:</td>
+					for _, weapon := range weapons {
+						<td class="border border-gray-500 px-2">{ weapon.Band }</td>
+					}
+				</tr>
+				<tr class="hover:bg-gray-700 hover:text-gray-100">
+					<td class="border border-gray-500 text-left px-1 sticky left-0 bg-gray-700">Sidelobe attenuation:</td>
+					for _, weapon := range weapons {
+						<td class="border border-gray-500 px-2">{ weapon.SidelobeAttenuation }</td>
+					}
+				</tr>
+				<tr class="hover:bg-gray-700 hover:text-gray-100">
+					<td class="border border-gray-500 text-left px-1 sticky left-0 bg-gray-700">Transmitter power:</td>
+					for _, weapon := range weapons {
+						<td class="border border-gray-500 px-2">{ weapon.TransmitterPower }</td>
+					}
+				</tr>
+				<tr class="hover:bg-gray-700 hover:text-gray-100">
+					<td class="border border-gray-500 text-left px-1 sticky left-0 bg-gray-700">Transmitter angle of half sensitivity:</td>
+					for _, weapon := range weapons {
+						<td class="border border-gray-500 px-2">{ weapon.TransmitterAngleOfHalfSensitivity }</td>
+					}
+				</tr>
+				<tr class="hover:bg-gray-700 hover:text-gray-100">
+					<td class="border border-gray-500 text-left px-1 sticky left-0 bg-gray-700">Transmitter sidelobe sensitivity:</td>
+					for _, weapon := range weapons {
+						<td class="border border-gray-500 px-2">{ weapon.TransmitterSidelobeSensitivity }</td>
+					}
+				</tr>
+				<tr class="hover:bg-gray-700 hover:text-gray-100">
+					<td class="border border-gray-500 text-left px-1 sticky left-0 bg-gray-700">Receiver angle of half sensitivity:</td>
+					for _, weapon := range weapons {
+						<td class="border border-gray-500 px-2">{ weapon.ReceiverAngleOfHalfSensitivity }</td>
+					}
+				</tr>
+				<tr class="hover:bg-gray-700 hover:text-gray-100">
+					<td class="border border-gray-500 text-left px-1 sticky left-0 bg-gray-700">Receiver sidelobe sensitivity:</td>
+					for _, weapon := range weapons {
+						<td class="border border-gray-500 px-2">{ weapon.ReceiverSidelobeSensitivity }</td>
+					}
+				</tr>
+				<tr class="hover:bg-gray-700 hover:text-gray-100">
+					<td class="border border-gray-500 text-left px-1 sticky left-0 bg-gray-700">Distance minimum value:</td>
+					for _, weapon := range weapons {
+						<td class="border border-gray-500 px-2">{ weapon.DistanceMinimumValue }</td>
+					}
+				</tr>
+				<tr class="hover:bg-gray-700 hover:text-gray-100">
+					<td class="border border-gray-500 text-left px-1 sticky left-0 bg-gray-700">Distance maximum value:</td>
+					for _, weapon := range weapons {
+						<td class="border border-gray-500 px-2">{ weapon.DistanceMaximumValue }</td>
+					}
+				</tr>
+				<tr class="hover:bg-gray-700 hover:text-gray-100">
+					<td class="border border-gray-500 text-left px-1 sticky left-0 bg-gray-700">Distance gate: [m]</td>
+					for _, weapon := range weapons {
+						<td class="border border-gray-500 px-2">{ weapon.DistanceGate }</td>
+					}
+				</tr>
+				<tr class="hover:bg-gray-700 hover:text-gray-100">
+					<td class="border border-gray-500 text-left px-1 sticky left-0 bg-gray-700">Distance minimum signal gate:</td>
+					for _, weapon := range weapons {
+						<td class="border border-gray-500 px-2">{ weapon.DistanceMinimumSignalGate }</td>
+					}
+				</tr>
+				<tr class="hover:bg-gray-700 hover:text-gray-100">
+					<td class="border border-gray-500 text-left px-1 sticky left-0 bg-gray-700">Distance ref width: [m]</td>
+					for _, weapon := range weapons {
+						<td class="border border-gray-500 px-2">{ weapon.DistanceRefWidth }</td>
 					}
 				</tr>
 				<tr class="hover:bg-gray-700 hover:text-gray-100">
@@ -293,9 +329,21 @@ templ RearAspect(weapons []*models.Params) {
 						<td class="border border-gray-500 px-2">{ weapon.PIDDerivativeTerm }</td>
 					}
 				</tr>
+				<tr class="hover:bg-gray-700 hover:text-gray-100">
+					<td class="border border-gray-500 text-left px-1 sticky left-0 bg-gray-700">Inertial guidance drift speed:</td>
+					for _, weapon := range weapons {
+						<td class="border border-gray-500 px-2">{ weapon.InertialNavigationDriftSpeed }</td>
+					}
+				</tr>
 				<th class="py-1 text-xl text-black text-left bg-blue-400 border border-gray-500" colspan={ fmt.Sprintf("%d", len(weapons)+2) }>
 					<span class="sticky left-0">Flight props</span>
 				</th>
+				<tr class="hover:bg-gray-700 hover:text-gray-100">
+					<td class="border border-gray-500 text-left px-1 sticky left-0 bg-gray-700">Maximum axis values:</td>
+					for _, weapon := range weapons {
+						<td class="border border-gray-500  px-2">{ weapon.MaximumAxisValues }</td>
+					}
+				</tr>
 				<tr class="hover:bg-gray-700 hover:text-gray-100">
 					<td class="border border-gray-500 text-left px-1 sticky left-0 bg-gray-700">Maximum fin angle of attack: [degrees]</td>
 					for _, weapon := range weapons {
@@ -327,24 +375,6 @@ templ RearAspect(weapons []*models.Params) {
 					}
 				</tr>
 				<tr class="hover:bg-gray-700 hover:text-gray-100">
-					<td class="border border-gray-500 text-left px-1 sticky left-0 bg-gray-700">Flight time until guidance starts (delay): [s]</td>
-					for _, weapon := range weapons {
-						<td class="border border-gray-500 px-2">{ weapon.FlightTimeUntilGuidanceStarts }</td>
-					}
-				</tr>
-				<tr class="hover:bg-gray-700 hover:text-gray-100">
-					<td class="border border-gray-500 text-left px-1 sticky left-0 bg-gray-700">Flight time when pull limit reaches 40%: [s]</td>
-					for _, weapon := range weapons {
-						<td class="border border-gray-500 px-2">{ weapon.FlightTimeWhenPullLimit40 }</td>
-					}
-				</tr>
-				<tr class="hover:bg-gray-700 hover:text-gray-100">
-					<td class="border border-gray-500 text-left px-1 sticky left-0 bg-gray-700">Flight time when pull limit reaches 100%: [s]</td>
-					for _, weapon := range weapons {
-						<td class="border border-gray-500 px-2">{ weapon.FlightTimeWhenPullLimit100 }</td>
-					}
-				</tr>
-				<tr class="hover:bg-gray-700 hover:text-gray-100">
 					<td class="border border-gray-500 text-left px-1 sticky left-0 bg-gray-700">Minimum range: [m]</td>
 					for _, weapon := range weapons {
 						<td class="border border-gray-500 px-2">{ weapon.MinimumRange }</td>
@@ -363,15 +393,33 @@ templ RearAspect(weapons []*models.Params) {
 					}
 				</tr>
 				<tr class="hover:bg-gray-700 hover:text-gray-100">
-					<td class="border border-gray-500 text-left px-1 sticky left-0 bg-gray-700">Thrust vectoring:</td>
+					<td class="border border-gray-500 text-left px-1 sticky left-0 bg-gray-700">Sea skimming:</td>
 					for _, weapon := range weapons {
-						<td class="border border-gray-500 px-2">{ weapon.ThrustVectoring }</td>
+						<td class="border border-gray-500 px-2">{ weapon.SeaSkimming }</td>
 					}
 				</tr>
 				<tr class="hover:bg-gray-700 hover:text-gray-100">
-					<td class="border border-gray-500 text-left px-1 sticky left-0 bg-gray-700">Thrust vectoring angle: [degrees]</td>
+					<td class="border border-gray-500 text-left px-1 sticky left-0 bg-gray-700">Loft:</td>
 					for _, weapon := range weapons {
-						<td class="border border-gray-500 px-2">{ weapon.ThrustVectoringAngle }</td>
+						<td class="border border-gray-500 px-2">{ weapon.Loft }</td>
+					}
+				</tr>
+				<tr class="hover:bg-gray-700 hover:text-gray-100">
+					<td class="border border-gray-500 text-left px-1 sticky left-0 bg-gray-700">Loft angle: [degrees]</td>
+					for _, weapon := range weapons {
+						<td class="border border-gray-500 px-2">{ weapon.LoftAngle }</td>
+					}
+				</tr>
+				<tr class="hover:bg-gray-700 hover:text-gray-100">
+					<td class="border border-gray-500 text-left px-1 sticky left-0 bg-gray-700">Target elevation: [degrees]</td>
+					for _, weapon := range weapons {
+						<td class="border border-gray-500 px-2">{ weapon.TargetElevation }</td>
+					}
+				</tr>
+				<tr class="hover:bg-gray-700 hover:text-gray-100">
+					<td class="border border-gray-500 text-left px-1 sticky left-0 bg-gray-700">Maximum target angular change: [degrees/s]</td>
+					for _, weapon := range weapons {
+						<td class="border border-gray-500 px-2">{ weapon.MaximumTargetAngularChange }</td>
 					}
 				</tr>
 			</tbody>

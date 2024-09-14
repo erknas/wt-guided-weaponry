@@ -9,34 +9,49 @@ import (
 
 	"github.com/zeze322/wt-guided-weaponry/lib"
 	"github.com/zeze322/wt-guided-weaponry/models"
+	"github.com/zeze322/wt-guided-weaponry/views/aamarh"
+	"github.com/zeze322/wt-guided-weaponry/views/aammcloslosbr"
+	"github.com/zeze322/wt-guided-weaponry/views/aamsarh"
+	"github.com/zeze322/wt-guided-weaponry/views/agmautomatic"
+	"github.com/zeze322/wt-guided-weaponry/views/agmlosbr"
+	"github.com/zeze322/wt-guided-weaponry/views/agmmclos"
+	"github.com/zeze322/wt-guided-weaponry/views/agmsaclos"
 	"github.com/zeze322/wt-guided-weaponry/views/agmsalh"
+	"github.com/zeze322/wt-guided-weaponry/views/allaspect"
+	"github.com/zeze322/wt-guided-weaponry/views/ashm"
 	"github.com/zeze322/wt-guided-weaponry/views/atgmautomatic"
 	"github.com/zeze322/wt-guided-weaponry/views/atgmlosbr"
+	"github.com/zeze322/wt-guided-weaponry/views/atgmmclos"
+	"github.com/zeze322/wt-guided-weaponry/views/atgmsaclos"
 	"github.com/zeze322/wt-guided-weaponry/views/components/search"
+	"github.com/zeze322/wt-guided-weaponry/views/gbu"
 	"github.com/zeze322/wt-guided-weaponry/views/home"
+	"github.com/zeze322/wt-guided-weaponry/views/irheli"
 	"github.com/zeze322/wt-guided-weaponry/views/rearaspect"
+	"github.com/zeze322/wt-guided-weaponry/views/samir"
+	"github.com/zeze322/wt-guided-weaponry/views/samsacloslosbr"
 )
 
 const (
 	irRearAspect   = "ir-rear-aspect"
 	irAllAspect    = "ir-all-aspect"
-	IrHeli         = "ir-heli"
+	irHeli         = "ir-heli"
 	aamSarh        = "aam-sarh"
-	aamArh         = "aamArh"
+	aamArh         = "aam-arh"
 	aamMclosLosbr  = "aam-mclos-losbr"
 	agmAutomatic   = "agm-automatic"
 	agmSalh        = "agm-salh"
 	agmSaclos      = "agm-saclos"
 	agmMclos       = "agm-mclos"
 	agmLosbr       = "agm-losbr"
-	gbu            = "gbu"
+	gbuc           = "gbu"
 	samIr          = "sam-ir"
 	samSaclosLosbr = "sam-saclos-losbr"
 	atgmMclos      = "atgm-mclos"
 	atgmSaclos     = "atgm-saclos"
 	atgmLosbr      = "atgm-losbr"
 	atgmAutomatic  = "atgm-automatic"
-	ashm           = "ashm"
+	ashms          = "ashm"
 )
 
 type SearchResponse struct {
@@ -89,25 +104,109 @@ func (s *Server) handleWeaponsByCategory(w http.ResponseWriter, r *http.Request)
 		if err != nil {
 			return err
 		}
-		return lib.Render(w, r, rearaspect.RearAspect(weapons))
+		return lib.Render(w, r, allaspect.AllAspect(weapons))
+	case irHeli:
+		weapons, err := s.mongo.WeaponsByCategory(r.Context(), category)
+		if err != nil {
+			return err
+		}
+		return lib.Render(w, r, irheli.IrHeli(weapons))
+	case aamSarh:
+		weapons, err := s.mongo.WeaponsByCategory(r.Context(), category)
+		if err != nil {
+			return err
+		}
+		return lib.Render(w, r, aamsarh.AamSarh(weapons))
+	case aamArh:
+		weapons, err := s.mongo.WeaponsByCategory(r.Context(), category)
+		if err != nil {
+			return err
+		}
+		return lib.Render(w, r, aamarh.AamArh(weapons))
+	case aamMclosLosbr:
+		weapons, err := s.mongo.WeaponsByCategory(r.Context(), category)
+		if err != nil {
+			return err
+		}
+		return lib.Render(w, r, aammcloslosbr.AamMclosLosbr(weapons))
+	case agmAutomatic:
+		weapons, err := s.mongo.WeaponsByCategory(r.Context(), category)
+		if err != nil {
+			return err
+		}
+		return lib.Render(w, r, agmautomatic.AgmAutomatic(weapons))
 	case agmSalh:
 		weapons, err := s.mongo.WeaponsByCategory(r.Context(), category)
 		if err != nil {
 			return err
 		}
 		return lib.Render(w, r, agmsalh.AgmSalh(weapons))
-	case atgmAutomatic:
+	case agmSaclos:
 		weapons, err := s.mongo.WeaponsByCategory(r.Context(), category)
 		if err != nil {
 			return err
 		}
-		return lib.Render(w, r, atgmautomatic.AtgmAutomatic(weapons))
+		return lib.Render(w, r, agmsaclos.AgmSaclos(weapons))
+	case agmMclos:
+		weapons, err := s.mongo.WeaponsByCategory(r.Context(), category)
+		if err != nil {
+			return err
+		}
+		return lib.Render(w, r, agmmclos.AgmMclos(weapons))
+	case agmLosbr:
+		weapons, err := s.mongo.WeaponsByCategory(r.Context(), category)
+		if err != nil {
+			return err
+		}
+		return lib.Render(w, r, agmlosbr.AgmLosbr(weapons))
+	case gbuc:
+		weapons, err := s.mongo.WeaponsByCategory(r.Context(), category)
+		if err != nil {
+			return err
+		}
+		return lib.Render(w, r, gbu.Gbu(weapons))
+	case samIr:
+		weapons, err := s.mongo.WeaponsByCategory(r.Context(), category)
+		if err != nil {
+			return err
+		}
+		return lib.Render(w, r, samir.SamIr(weapons))
+	case samSaclosLosbr:
+		weapons, err := s.mongo.WeaponsByCategory(r.Context(), category)
+		if err != nil {
+			return err
+		}
+		return lib.Render(w, r, samsacloslosbr.SamSaclosLosbr(weapons))
+	case atgmMclos:
+		weapons, err := s.mongo.WeaponsByCategory(r.Context(), category)
+		if err != nil {
+			return err
+		}
+		return lib.Render(w, r, atgmmclos.AtgmMclos(weapons))
+	case atgmSaclos:
+		weapons, err := s.mongo.WeaponsByCategory(r.Context(), category)
+		if err != nil {
+			return err
+		}
+		return lib.Render(w, r, atgmsaclos.AtgmSaclos(weapons))
 	case atgmLosbr:
 		weapons, err := s.mongo.WeaponsByCategory(r.Context(), category)
 		if err != nil {
 			return err
 		}
 		return lib.Render(w, r, atgmlosbr.AtgmLosbr(weapons))
+	case atgmAutomatic:
+		weapons, err := s.mongo.WeaponsByCategory(r.Context(), category)
+		if err != nil {
+			return err
+		}
+		return lib.Render(w, r, atgmautomatic.AtgmAutomatic(weapons))
+	case ashms:
+		weapons, err := s.mongo.WeaponsByCategory(r.Context(), category)
+		if err != nil {
+			return err
+		}
+		return lib.Render(w, r, ashm.Ashm(weapons))
 	}
 
 	return nil
