@@ -1,2 +1,0 @@
- 
- <div id=\"search-result\"></div><div><table id=\"params\"></table></div>

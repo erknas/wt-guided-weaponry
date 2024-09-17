@@ -1620,16 +1620,132 @@ input[type="range"]::-ms-fill-lower {
   top: 0px;
 }
 
-.top-14 {
-  top: 3.5rem;
-}
-
 .top-5 {
   top: 1.25rem;
 }
 
 .top-7 {
   top: 1.75rem;
+}
+
+.left-14 {
+  left: 3.5rem;
+}
+
+.left-10 {
+  left: 2.5rem;
+}
+
+.left-11 {
+  left: 2.75rem;
+}
+
+.left-\[\] {
+  left: ;
+}
+
+.left-\[60px\] {
+  left: 60px;
+}
+
+.left-\[50px\] {
+  left: 50px;
+}
+
+.left-\[55px\] {
+  left: 55px;
+}
+
+.left-\[70px\] {
+  left: 70px;
+}
+
+.left-\[80px\] {
+  left: 80px;
+}
+
+.left-\[100px\] {
+  left: 100px;
+}
+
+.left-\[333px\] {
+  left: 333px;
+}
+
+.left-\[200px\] {
+  left: 200px;
+}
+
+.left-\[150px\] {
+  left: 150px;
+}
+
+.left-\[130px\] {
+  left: 130px;
+}
+
+.top-3 {
+  top: 0.75rem;
+}
+
+.top-2 {
+  top: 0.5rem;
+}
+
+.left-\[135px\] {
+  left: 135px;
+}
+
+.left-\[125px\] {
+  left: 125px;
+}
+
+.top-8 {
+  top: 2rem;
+}
+
+.top-14 {
+  top: 3.5rem;
+}
+
+.top-11 {
+  top: 2.75rem;
+}
+
+.top-16 {
+  top: 4rem;
+}
+
+.top-1 {
+  top: 0.25rem;
+}
+
+.top-20 {
+  top: 5rem;
+}
+
+.top-\[\] {
+  top: ;
+}
+
+.top-\[65px\] {
+  top: 65px;
+}
+
+.top-\[50px\] {
+  top: 50px;
+}
+
+.top-\[60px\] {
+  top: 60px;
+}
+
+.top-\[70px\] {
+  top: 70px;
+}
+
+.top-\[69px\] {
+  top: 69px;
 }
 
 .z-40 {
@@ -1656,6 +1772,10 @@ input[type="range"]::-ms-fill-lower {
   display: block;
 }
 
+.flex {
+  display: flex;
+}
+
 .inline-flex {
   display: inline-flex;
 }
@@ -1672,6 +1792,10 @@ input[type="range"]::-ms-fill-lower {
   height: 2.5rem;
 }
 
+.h-14 {
+  height: 3.5rem;
+}
+
 .h-2\.5 {
   height: 0.625rem;
 }
@@ -1682,6 +1806,10 @@ input[type="range"]::-ms-fill-lower {
 
 .h-\[890px\] {
   height: 890px;
+}
+
+.max-h-72 {
+  max-height: 18rem;
 }
 
 .w-2\.5 {
@@ -1708,6 +1836,10 @@ input[type="range"]::-ms-fill-lower {
   min-width: 22rem;
 }
 
+.flex-grow {
+  flex-grow: 1;
+}
+
 .border-separate {
   border-collapse: separate;
 }
@@ -1716,6 +1848,10 @@ input[type="range"]::-ms-fill-lower {
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
+}
+
+.flex-col {
+  flex-direction: column;
 }
 
 .items-center {
@@ -1730,6 +1866,10 @@ input[type="range"]::-ms-fill-lower {
 
 .overflow-y-auto {
   overflow-y: auto;
+}
+
+.overflow-y-scroll {
+  overflow-y: scroll;
 }
 
 .border {
@@ -1913,6 +2053,11 @@ input[type="range"]::-ms-fill-lower {
 
 .duration-300 {
   transition-duration: 300ms;
+}
+
+.odd\:bg-red-600:nth-child(odd) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(224 36 36 / var(--tw-bg-opacity));
 }
 
 .hover\:border-violet-500:hover {

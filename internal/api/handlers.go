@@ -257,7 +257,7 @@ func (s *Server) handleSearchWeapon(w http.ResponseWriter, r *http.Request) erro
 
 	weapons, err := s.mongo.SearchWeapon(r.Context(), keyWord)
 	if err != nil {
-		return err
+		return lib.InvalidRequest(keyWord)
 	}
 
 	return lib.Render(w, r, search.SearchResult(weapons))
