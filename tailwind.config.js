@@ -5,11 +5,4 @@ module.exports = {
   plugins: [require('daisyui'), require('flowbite/plugin')],
   daisyui: {themes: ["business", "nord", "dracula"]},
   darkMode: 'media',
-  theme:{
-    extend:{
-      colors:{
-        business: '#f0f0f0',
-      }
-    }
-  }
 }

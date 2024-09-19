@@ -31,7 +31,7 @@ func AtgmAutomatic(weapons []*models.Params) templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<div class=\"mt-5 h-[890px] w-[1530px] overflow-y-auto ml-96 container absolute\"><table class=\"border-separate\"><thead class=\"sticky top-0 z-40 font-bold text-lg h-14\"><tr><th class=\" text-left px-1 text-gray-950 bg-gray-200 sticky left-0 border border-gray-500\">Name</th>")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<div class=\"mt-5 h-[890px] overflow-y-auto ml-96 container absolute\"><table class=\"border-separate\"><thead class=\"sticky top-0 z-40 font-bold text-lg h-14\"><tr><th class=\" text-left px-1 text-gray-950 bg-gray-200 sticky left-0 border border-gray-500\">Name</th>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -67,7 +67,7 @@ func AtgmAutomatic(weapons []*models.Params) templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\"><span class=\"sticky left-0\">Physical props</span></th><tr class=\"hover:bg-gray-700 hover:text-gray-100\"><td class=\"sticky left-0 border border-gray-500 text-left px-1 min-w-[22rem] bg-gray-700\">Mass: [kg]</td>")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\"><span class=\"sticky left-0\">Physical props</span></th><tr class=\"hover:bg-gray-700 hover:text-gray-100\"><td class=\"sticky left-0 border border-gray-500 text-left px-1 w-[22rem] bg-gray-700\">Mass: [kg]</td>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

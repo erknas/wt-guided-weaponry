@@ -67,7 +67,7 @@ func Ashm(weapons []*models.Params) templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\"><span class=\"sticky left-0\">Physical props</span></th><tr class=\"hover:bg-gray-700 hover:text-gray-100\"><td class=\"sticky left-0 border border-gray-500 text-left px-1 min-w-[22rem] bg-gray-700\">Mass: [kg]</td>")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\"><span class=\"sticky left-0\">Physical props</span></th><tr class=\"hover:bg-gray-700 hover:text-gray-100\"><td class=\"sticky left-0 border border-gray-500 text-left px-1 w-[22rem] bg-gray-700\">Mass: [kg]</td>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
