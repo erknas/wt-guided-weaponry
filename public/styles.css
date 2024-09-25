@@ -1740,10 +1740,6 @@ input[type="range"]::-ms-fill-lower {
   border-collapse: separate;
 }
 
-.cursor-pointer {
-  cursor: pointer;
-}
-
 .select-none {
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -1955,11 +1951,6 @@ input[type="range"]::-ms-fill-lower {
   transition-duration: 300ms;
 }
 
-.focus-within\:bg-red-500:focus-within {
-  --tw-bg-opacity: 1;
-  background-color: rgb(240 82 82 / var(--tw-bg-opacity));
-}
-
 .hover\:border-violet-500:hover {
   --tw-border-opacity: 1;
   border-color: rgb(139 92 246 / var(--tw-border-opacity));
@@ -1990,16 +1981,6 @@ input[type="range"]::-ms-fill-lower {
   border-color: rgb(139 92 246 / var(--tw-border-opacity));
 }
 
-.focus\:bg-slate-600:focus {
-  --tw-bg-opacity: 1;
-  background-color: rgb(71 85 105 / var(--tw-bg-opacity));
-}
-
-.focus\:text-red-500:focus {
-  --tw-text-opacity: 1;
-  color: rgb(240 82 82 / var(--tw-text-opacity));
-}
-
 .focus\:text-violet-500:focus {
   --tw-text-opacity: 1;
   color: rgb(139 92 246 / var(--tw-text-opacity));
@@ -2014,14 +1995,4 @@ input[type="range"]::-ms-fill-lower {
 .focus\:outline-none:focus {
   outline: 2px solid transparent;
   outline-offset: 2px;
-}
-
-.focus-visible\:bg-red-500:focus-visible {
-  --tw-bg-opacity: 1;
-  background-color: rgb(240 82 82 / var(--tw-bg-opacity));
-}
-
-.active\:bg-slate-600:active {
-  --tw-bg-opacity: 1;
-  background-color: rgb(71 85 105 / var(--tw-bg-opacity));
 }

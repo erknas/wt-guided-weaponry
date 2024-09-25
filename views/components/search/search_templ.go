@@ -31,7 +31,7 @@ func SearchInput() templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<div class=\"relative\"><div class=\"absolute left-52 top-5 z-50\"><input style=\"width: 156.38px\" id=\"search\" class=\"h-10 pl-3 pr-2 py-2 bg-transparent text-gray-200 border border-slate-200 transition duration-300 ease focus:outline-none focus:border-violet-500 hover:border-violet-500 shadow-sm focus:shadow-md font-mono text-sm\" placeholder=\"Search\" hx-get=\"/search\" hx-vals=\"js:{search: document.getElementById(&#39;search&#39;).value}\" hx-trigger=\"input changed delay:300ms, search\" hx-target=\"#search-result\"> <button class=\"absolute left-[125px] top-2 z-50 h-5 w-6 text-gray-400 hover:text-slate-200 transition duration-300 ease\" onclick=\"document.getElementById(&#39;search&#39;).value = &#39;&#39;\" hx-get=\"search?search=\" hx-target=\"#search-result\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M6 18L18 6M6 6l12 12\"></path></svg></button></div></div>")
+		templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 1)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -57,12 +57,12 @@ func SearchResult(weapons []models.Name) templ.Component {
 			templ_7745c5c3_Var2 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<div class=\"relative\"><div class=\"absolute left-52 top-[70px]\"><ul class=\"border border-violet-500 text-gray-200 flex flex-col flex-grow overflow-y-scroll max-h-72 bg-transparent text-sm font-mono z-50\" style=\"width: 156.38px\">")
+		templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 2)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		for _, weapon := range weapons {
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<li><a class=\"block px-2 py-2 hover:bg-slate-600 select-none\" hx-target=\"#params\" hx-get=\"")
+			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 3)
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -75,7 +75,7 @@ func SearchResult(weapons []models.Name) templ.Component {
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\">")
+			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 4)
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -88,12 +88,12 @@ func SearchResult(weapons []models.Name) templ.Component {
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</a></li>")
+			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 5)
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</ul></div></div>")
+		templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 6)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
