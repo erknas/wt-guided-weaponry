@@ -1,3 +1,1 @@
-Website for WarThunder guided weapons (in-game values).
-
-Go, MongoDB, HTMX, templ.
+Full-stack app written in Golang with MongoDB, htmx, temp, tailwind.
